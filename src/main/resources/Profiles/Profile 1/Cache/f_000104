@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Alibaba Manufacturer Directory - Suppliers, Manufacturers, Exporters & Importers</title>
+    <script type="text/javascript" nonce="4057c03b907e4f56b6f3391351f" src="//local.adguard.org?ts=1596090911043&amp;type=content-script&amp;dmn=msg.aliexpress.ru&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1"></script>
+<script type="text/javascript" nonce="4057c03b907e4f56b6f3391351f" src="//local.adguard.org?ts=1596090911043&amp;name=AdGuard%20Popup%20Blocker&amp;name=AdGuard%20Assistant&amp;name=AdGuard%20Extra&amp;type=user-script"></script><link rel="shortcut icon" type="image/x-icon" href="//ae01.alicdn.com/images/eng/wholesale/icon/aliexpress.ico" />
+    
+    
+    <link type="text/css" href="" rel="stylesheet" />
+	<script type="text/javascript" charset="utf-8" src=""></script>
+    <link rel="stylesheet" href="//i.alicdn.com/ae-message-ui/biz/msg/list/??buyerV20160505.572eecd9.css">
+
+    <script src="//i.alicdn.com/ae-global/atom/??atom.js?t=886725" data-locale="ru_RU"></script>
+    <script src="//i.alicdn.com/ae-message-ui/??hashmap.ad7310e8.js"></script>
+<script type="text/javascript" data-locale="en-us" src="//i.alicdn.com/ae-message-ui/biz/msg/list/??buyerV20160505.c6041156.js" data-version="ae-message-ui-1.3.3" async defer></script>
+</head>
+<body>
+
+<!--me notice banner *option*-->
+<div class="me_notice">
+</div>
+<!--me notice banner *option-->
+
+<!--yakult header-->
+<script type="text/javascript">
+window.addEventListener('load', function () {
+  if (!/aliexpress\.ru$/.test(window.location.hostname)) {
+    return;
+  }
+  var targetBlocks = [
+    '.top-lighthouse',
+    '.me-header',
+    '.navigation',
+    '.me-ui-box',
+    '.site-footer .sf-siteIntro',
+    '.site-footer .sf-seoKeyword',
+    'footer-copywrite'
+  ];
+  var targetLinkPat = /aliexpress\.com/;
+  var targetDestLink = 'aliexpress.ru';
+  var links = [];
+  targetBlocks.forEach(function (block) {
+    var arr = [].slice.call(document.querySelectorAll(block + ' a'));
+    links = links.concat(arr);
+  });
+  links.forEach(function (link) {
+    if (targetLinkPat.test(link.href)) {
+      link.href = link.href.replace(targetLinkPat, targetDestLink);
+    }
+  });
+  var nationBlock = '.site-footer .sf-MultiLanguageSite';
+  var nationLinkPat = /ru\.aliexpress\.com/;
+  var nationLinks = [].slice.call(document.querySelectorAll(nationBlock + ' a'));
+  nationLinks.forEach(function (link) {
+    if (nationLinkPat.test(link.href)) {
+      link.href = link.href.replace(nationLinkPat, 'ru.aliexpress.ru');
+    }
+  });
+});
+</script>
+<link rel="stylesheet" type="text/css" href="//i.alicdn.com/ae-header/20160804125608/buyer/back/me-header.css">
+
+<!-- ## start top-lighthouse -->
+<div class="top-lighthouse" id="top-lighthouse">
+    <div class="top-lighthouse-wrap container">
+        <div class="nav-global" id="nav-global">
+            <div class="ng-item ng-bp"><a href="//www.aliexpress.com/buyerprotection/index.html" rel="nofollow">Защита Покупателя</a></div>
+            <div class="ng-item ng-help ng-sub">
+                <span class="ng-sub-title">Помощь</span>
+                <ul class="ng-sub-list">
+                    <li><a href="//www.aliexpress.com/help/newContactUs.htm" rel="nofollow" class="ng-help-link" data-role="help-center-link">Служба поддержки</a></li>
+                    <li><a href="//report.aliexpress.com/" rel="nofollow" data-role="complaint-link">Споры и жалобы</a></li>
+                </ul>
+            </div>
+            <div class="ng-item ng-bp"><a href="//activities.aliexpress.com/app-download.php?tracelog=pc_homepage" rel="nofollow">Mobile</a></div>
+        </div>
+    </div>
+</div>
+<!-- ## end top-lighthouse -->
+<div class="me-header" id="header">
+    <div class="header-wrap container">
+        <div class="hm-left">
+            <div class="site-logo inside-page-logo">
+                <a href="//www.aliexpress.com/"><span class="logo-base">AliExpress</span></a>
+            </div>
+        </div>
+        <div class="hm-right">
+            <div class="nav-cart-container"><a class="nav-cart me-icons" href="//shoppingcart.aliexpress.com/shopcart/shopcartDetail.htm">Cart<span id="nav-cart-num" class="cart-number">0</span></a></div>
+            <div class="nav-wishlist">
+                <a href="//my.aliexpress.com/wishlist/wish_list_product_list.htm"><span class="text hidden-sm">Wishlist</span></a>
+            </div>
+            <div class="nav-user-account" id="nav-user-account">
+                <!-- ## start user-account-info -->
+                <div id="userAccountInfo" class="user-account-info" data-role="user-account-top">
+                    <div class="user-account-inner hidden-sm">
+                        <span class="account-unsigned" data-role="unsigned"><a rel="nofollow" href="https://login.aliexpress.com/express/mulSiteLogin.htm" data-role="sign-link">Sign in</a><span class="ua-line">|</span><a rel="nofollow" href="https://login.aliexpress.com/join/buyer/expressJoin.htm" data-role="join-link">Join</a></span>
+                        <span class="account-name" data-role="username"></span>
+                    </div>
+                </div>
+                <!-- ## end user-account-info -->
+                <!-- ##start user-account-main -->
+                <div class="user-account-main" data-role="user-account-main">
+                    <div class="flyout-user-signout" data-role="signout-btn"><a rel="nofollow" href="https://login.aliexpress.com/xman/xlogout.htm">Выйти</a></div>
+                    <div class="flyout-user-signIn" data-role="user-signIn">
+                        <p class="flyout-welcome-text" data-role="flyout-welcome"></p>
+                        <p><a rel="nofollow" href="https://login.aliexpress.com/express/mulSiteLogin.htm" class="sign-btn" data-role="sign-link">Войти</a></p>
+                        <p class="flyout-signIn-type">
+                            <span>Войти через</span>
+                            <a class="nus-icon nus-facebook" data-role="login-type" rel="nofollow" href="//thirdparty.aliexpress.com/login.htm?type=fb&tracelog=ws_fb_topbar" title="facebook"></a>
+                            <a class="nus-icon nus-vk" data-role="login-type" rel="nofollow" href="//thirdparty.aliexpress.com/login.htm?type=vk&tracelog=ws_vk_topbar" title="vk"></a>
+                        </p>
+                    </div>
+                    <dl class="flyout-visitors-login" data-role="user-login">
+                        <dt>Новый покупатель?</dt>
+                        <dd><a rel="nofollow" href="//us.ae.aliexpress.com/wsuser/buyerJoin/expressJoinIndex.htm" class="join-btn" data-role="join-link">Зарегистрироваться</a></dd>
+                    </dl>
+                    <div id="flyout-remind-list" class="flyout-remind-list"></div>
+                    <ul class="flyout-quick-entry" data-role="quick-entry">
+                        <li><a rel="nofollow" href="//home.aliexpress.com/index.htm?tracelog=ws_topbar">Мой AliExpress</a></li>
+                        <li><a rel="nofollow" href="//trade.aliexpress.com/order_list.htm">Мои заказы</a></li>
+                        <li><a rel="nofollow" href="//msg.aliexpress.com/">Центр сообщений</a></li>
+                        <li><a rel="nofollow" href="//my.aliexpress.com/wishlist/wish_list_product_list.htm">Мои желания</a></li>
+                        <li><a class="js-menu-my-favorite-stores" rel="nofollow" href="//my.aliexpress.com/wishlist/wish_list_store_list.htm">Любимые магазины</a></li>
+                        <li><a rel="nofollow" href="//my.aliexpress.com/coupon/buyerCouponList.htm?sortBy=2">Мои купоны</a></li>
+                        <li><a href="//my.aliexpress.com/points/myPoints.htm" rel="nofollow">Мои баллы</a></li>
+                    </ul>
+                </div>
+                <!-- ## end user-account-main -->
+            </div>
+        </div>
+        <div class="hm-middle">
+            <form id="form-searchbar" class="searchbar-form" action="/wholesale" method="get">
+                <input type="hidden" id="catId" name="catId" value="0" />
+                <input type="hidden" id="historyTab" />
+                <input type="hidden" id="historySearchInput" />
+                <input type="hidden" id="historySearchCountry" />
+                <input type="hidden" id="initiative_id" name="initiative_id" value="" />
+                <div class="search-box">
+                    <input type="text" placeholder="Я ищу..." maxlength="50" autocomplete="off" value=""
+                    name="SearchText" class="search-key" id="search-key" /><input type="submit" class="search-button me-icons" value="" />
+                </div>
+            
+<input type="hidden" name="_csrf" value="3v_wjrwa4vw9" /></form>
+        </div>
+    </div>
+</div>
+<script>
+    var headerConfig = {
+        locale: 'ru_RU',
+        site:'glo'
+    }
+</script>
+<script src="//i.alicdn.com/ae-header/20160804125608/buyer/back/me-header.js" async defer></script>
+<!--yakult header-->
+
+<!--top main menu-->
+
+<div class="navigation">
+	<ul class="util-clearfix">
+		<!-- menu begin -->
+            <li>
+	        	<a id="headMenu_default"  href="//home.aliexpress.com" >Мой AliExpress</a>
+	        </li>
+	        <li >
+	        	<a id="headMenu_transactions"  href="//trade.aliexpress.com/order_list.htm" >Мои заказы</a>
+	        </li>
+	        <li class="current">
+	        	<a id="headMenu_myaliexpress_message"  href="https://msg.aliexpress.ru" >Центр сообщений</a>
+	        </li>
+	        <li >
+	        	<a id="headMenu_wishlist"  href="//my.aliexpress.com/wishlist/wish_list_product_list.htm" >Мои желания</a>
+	        </li>
+	        <li >
+	        	<a id="headMenu_wishliststorelist"  href="//my.aliexpress.com/wishlist/wish_list_store_list.htm" >Любимые магазины</a>
+	        </li>
+	        <li >
+	        	<a id="headMenu_account"  href="//home.aliexpress.com/account_settings.htm" >Профиль</a>
+	        </li>
+			
+        <!-- menu end -->
+	</ul>
+</div>
+
+<!--top main menu-->
+
+<!--container-->
+<div class="container me-body-container">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- left menu -->
+            
+            
+<input type="hidden" name="channelMergFlag" id="channelMergFlagId" value="true">
+<div class="grid-col-container">
+    <!-- left menu from menu app start -->
+    <div class="me-left-menu">
+        <!--消息-->
+        <h4 class="me-menu-header me-menu-open">
+            <a href="javascript:void(0);">Центр сообщений<i class="small-icon minus-icon"></i></a>
+        </h4>
+        <div class="me-menu-body">
+            
+            <!--卖家消息（新版IM）-->
+            <p class='me-menu-title'><!--seller_message-->
+                <a href="/buyerMsgListNew.htm">Чаты <span class="unread-icon" id="leftmenu-newImlist"></span></a>
+            </p>        
+            <!--p class='me-menu-title'>
+                <a href="/buyerSpamList.htm" id="menu-black-list">Спам<span class="unread-icon" id="leftmenu-spamlist"></span></a>
+            </p-->
+        </div>
+		<h4 class="me-menu-header me-menu-open menu-separator">
+            <a href="javascript:void(0);">Служебные оповещения<i class="small-icon minus-icon"></i></a>
+        </h4>
+        <div class="me-menu-body">
+            <p class='me-menu-title'>
+                <a href="/buyerBizNoticeList.htm">Уведомления<span class="unread-icon" id="leftmenu-bizNoticelist"></span></a>
+            </p>
+        </div>
+		<h4 class="me-menu-header me-menu-open menu-separator">
+            <a href="javascript:void(0);">Настройки<i class="small-icon minus-icon"></i></a>
+        </h4>
+        <div class="me-menu-body">
+            <p class='me-menu-title'>
+                <a href="/buyerBlackList.htm" id="menu-black-list">Чёрный список</a>
+            </p>
+        </div>
+    </div>
+    <!-- left menu from menu app start -->
+</div>
+
+<!-- left weibo start -->
+<div class="grid-col-container">
+    <div class="me-ui-box mobile-app">
+        <div class="edu-weixin">
+		
+			<span class="t">AliExpress Mobile App </span> 
+		   <span class="g">Поиск везде, в любое время!</span><a href="//sale.aliexpress.com/download_app_guide.htm" target="_blank"
+><span>Сканирование или нажмите , </span></a>
+<a href="//sale.aliexpress.com/download_app_guide.htm" target="_blank"><span>чтобы загрузить</span></a><a href="//sale.aliexpress.com/download_app_guide.htm" target="_blank"> <img alt="" border="0" src="//ae01.alicdn.com/kf/HTB1phZLKVXXXXX5XFXX760XFXXXC.png"> <span></span> </a>
+			 
+		</div>
+    </div>
+</div>
+<!-- left weibo end -->
+            
+        </div>
+
+        <!-- start: main content -->
+        <div class="col-xs-48">
+            
+
+<div class="row msg-col-compatibility">
+    <div class="col-xs-60">
+        <div class="grid-col-container">
+            <div class="me-ui-main-title">
+                <h2>Сообщения о заказе</h2>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-60">
+        <div class="grid-col-container">
+         <div class="me-ui-box">
+          <form id="filter-form" action="" method="get">
+           <input type="hidden" id="current-page" value="9999" name="currentPage" />
+           <input type="hidden" id="refine-type" value="" name="" />
+
+           <div class="messagecenter-filter">
+                 <span class="messagecenter-button">
+                 
+                 <a href="/buyerMsgList.htm" class="nomarl-current">All</a>
+                 
+                 </span>
+                 <span class="messagecenter-button">|</span>
+                 <span class="messagecenter-button">
+                 
+                    <a href="/buyerMsgList.htm?currentPage=1&readStat=0" class="nomarl">Непрочитанные</a>
+                  
+                 </span>
+                 <span class="messagecenter-button">|</span>
+                 <span class="messagecenter-button">
+                    
+                    <a href="/buyerMsgList.htm?currentPage=1&dealStat=0" class="nomarl">Неотвеченные</a>
+                    
+                  </span>
+                  <span class="messagecenter-search">
+                        <input type="text" data-role="keywords" id="key-word" name="" value="" placeholder="Искать за последние 6 месяцев" maxlength="64" class="ui-textfield ui-textfield-system ui-control-xl" />
+                        <button id="keyword-search-btn" type="submit" class="ui-button menu-button">Поиск</button>
+                  </span>
+            </div>
+         
+<input type="hidden" name="_csrf" value="3v_wjrwa4vw9" /></form>
+         </div>
+        </div>
+        <div class="grid-col-container">
+            <div class="me-ui-box">
+
+                <table id="message-list" class="ui-table message-list">
+                    <thead>
+                    <tr>
+                        <th>От</th>
+                        <th></th>
+                        <th width="400">Сообщения о заказе</th>
+                        <th width="80">Время(US)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                        
+                    
+                    </tbody>
+                </table>
+                <div id="pagination-wrap" class="list-pagination"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<form id="batch-form" action="" method="post">
+    <input type="hidden" id="batch-type" value="" name="batchType" />
+    <input type="hidden" id="sender-names" value="" name="senderNames" />
+    <input type="hidden" id="sender-ids" value="" name="senderIds" />
+    <input type="hidden" id="channel-ids" value="" name="channelIds" />
+    <input type="hidden" id="rank-value" value="" name="rankValue" />
+    <input type="hidden" id="dealstat-value" value="" name="dealStatValue" />
+
+<input type="hidden" name="_csrf" value="3v_wjrwa4vw9" /></form>
+<script type="text/javascript">
+    var i18n = {
+        confirm: 'Подтвердить',
+        cancel: 'Отмена',
+        selectedErrorTip: 'Operation\u0020failed',
+        addBlackListConfirmTitle: 'Добавить\u0020в\u0020чёрный\u0020список\u003f',
+        addBlackListTip: 'Контакт\u0020из\u0020чёрного\u0020списка\u0020не\u0020сможет\u0020отправлять\u0020вам\u0020сообщения\u002e',
+        successText: 'Выполнено',
+        errorText: 'Выполнено',
+        newPageWindowTitle: 'Welcome\u0020to\u0020our\u0020new\u0020message\u0020center\u0021',
+        newPageWindowBigTitle: 'Easier\u0020\u0026\u0020Faster',
+        newPageWindowContent: 'We\u0020have\u0020improved\u0020our\u0020message\u0020center\u0020to\u0020make\u0020it\u0020easier\u0020and\u0020faster\u0020for\u0020your\u0020to\u0020manage\u0020your\u0020messages\u002eHappy\u0020shopping\u0021',
+        tipTryNow: 'Try\u0020Now',
+        tipBlackList: 'Stop\u0020receiving\u0020unwanted\u0020messages\u0020by\u0020putting\u0020senders\u0020to\u0020the\u0020contact\u0020blacklist\u002eYou\u0020can\u0020also\u0020remove\u0020the\u0020senders\u0020from\u0020blacklist\u0020to\u0020receive\u0020their\u0020messages\u0020again\u002e',
+        tipBlackListTitle: 'Чёрный\u0020список',
+        tipIknow: 'I\u0020know',
+        tipOrderMsgTitle: 'Форма\u0020заказа',
+        tipOrderMsgContent: 'You\u0020can\u0020use\u0020the\u0020order\u0020message\u0020function\u0020to\u0020communicate\u0020with\u0020the\u0020seller\u0020about\u0020the\u0020order',
+        tipQuestionnaire: 'Tell\u0020us\u0020how\u0020you\u0020would\u0020improve\u0020AliExpress\u0021'
+    };
+    for (var key in i18n){
+        i18n[key] = i18n[key].replace(/\n/g, '<br/>');
+    }
+
+    var pageConfig = {
+        updateMessageRankURL: 'https://msg.aliexpress.ru/updateMessageRank.htm',
+        multipleReplyAction: 'https://msg.aliexpress.ru/sellerMulReply.htm',
+        currentPage: 9999,
+        remianPage: 0,
+        intelligentUrl:'//portal.manjushri.alibaba.com/portal/portal/init.jspa?instanceCode=ALIR00001294&scenceCode=SCEN00002264&contextParams=p%2BTauGh%2BIcqFDLPqtgPKVGAmiCOthtjWPsGtESh4j%2F1l6j%2Bogv%2B9aXvIZU0LMHW7MX7tbVG%2B2lVYdbFp0RGQbIFZGjZmmXTZ%2FWG%2BEHmuUUJvl2gCr21ssCWas6fWNfMQ&digest=8f124c2e774b8cb5426b42cda6fc9cfe',
+		currentLanguage:'ru_RU',
+		infoUrl:''
+    };
+    seajs.iuse('//i.alicdn.com/ae-message-ui/biz/msg/list/buyerV20160505.js')(function(MessageCenterList) {
+              new MessageCenterList().render();
+            });
+</script>
+
+
+        </div>
+        <!-- end: main content -->
+    </div>
+</div>
+
+<!--yakult footer-->
+<!--TMS:2482405-->
+<link href="//i.alicdn.com/ae-footer/20170227134848/buyer/back/me-footer.css" rel="stylesheet" type="text/css">
+<!--START TMS:1858189-->
+<div class="site-footer">
+    <div class="container">
+	 
+		<div class="sf-aliexpressInfo clearfix">
+			<div class="sf-siteIntro col-lg-30 col-md-30 col-sm-60">
+				<dl>
+					<dt>Помогите</dt>
+					<dd><a href="//www.aliexpress.com/help/contactus.htm">Обслуживание клиентов</a> , <a href="//report.aliexpress.com">Споры и отчеты</a> , <a href="http://activities.aliexpress.com/adcms/help-aliexpress-com/categories_Payment.php">делая оплаты</a> , <a href="http://activities.aliexpress.com/adcms/help-aliexpress-com/shipping_methods.php">варианты доставки</a> , <a href="http://activities.aliexpress.com/adcms/www-aliexpress-com/buyerprotection/index.php" ref="nofollow">Покупатель защита</a> , <a href="//www.aliexpress.com/how-to-buy" ref="nofollow">New Руководства пользователя</a> , <a href="http://ipp.alibabagroup.com" ref="nofollow">Защита интеллектуальной собственности</a></dd>
+				</dl>
+			</div>
+
+			<div class="sf-MultiLanguageSite col-lg-30 col-md-30 col-sm-60">
+				<dl>
+					<dt>AliExpress Многоязычные сайты</dt>
+					<dd><a href="//ru.aliexpress.com">Русский</a> , <a href="//pt.aliexpress.com">португальский</a> , <a href="//es.aliexpress.com">испанский</a> , <a href="//fr.aliexpress.com">французский</a> , <a href="//de.aliexpress.com">немецкий</a> , <a href="//it.aliexpress.com">итальянский</a> , <a href="//nl.aliexpress.com">голландский</a> , <a href="//tr.aliexpress.com">турецкий</a> , <a href="//ja.aliexpress.com">японский</a> , <a href="//ko.aliexpress.com">корейский</a> , <a href="//th.aliexpress.com">тайский</a> , <a href="//vi.aliexpress.com">вьетнамский</a> , <a href="//ar.aliexpress.com">арабский</a> , <a href="//he.aliexpress.com">иврит</a> , <a href="//pl.aliexpress.com">польский</a></dd>
+				</dl>
+			</div>
+		</div>
+
+		<div class="sf-seoKeyword col-lg-30 col-md-30 col-sm-60">
+			<dl>
+				<dt>Просмотр по категориям</dt>
+				<dd><a href="//www.aliexpress.com/popular.html">Весь популярный</a> , <a href="//www.aliexpress.com/wholesale.html">продукт</a> , <a href="//www.aliexpress.com/promotion.html">промотирование</a> , <a href="//www.aliexpress.com/price.html">низкая цена</a> , <a href="//www.aliexpress.com/cheap.html">Great Value</a> , <a href="//www.aliexpress.com/compare.html">Retail</a> , <a href="//www.aliexpress.com/reviews.html">Отзывы</a> , <a href="//brands.aliexpress.com">Китай Бренды</a></dd>
+			</dl>
+		</div>
+
+		<div class="sf-alibabaGroup col-lg-30 col-md-30 col-sm-60">
+			<dl>
+				<dt>Alibaba Group</dt>
+				<dd><a href="http://www.alibabagroup.com/en/global/home" ref="nofollow">Alibaba Group Веб - </font>сайт</a> , <a href="//www.aliexpress.com/" ref="nofollow">AliExpress</a> , <a href="http://www.alimama.com/" ref="nofollow">Alimama</a> , <a href="https://intl.alipay.com/index.htm" ref="nofollow">Alipay</a> , <a href="http://www.fliggy.com/" ref="nofollow">Fliggy</a> , <a href="http://www.alicloud.com" ref="nofollow">Alibaba Cloud</a> , <a href="http://www.alibaba.com/" ref="nofollow">Alibaba International</a> , <a href="http://aliqin.tmall.com/" ref="nofollow">AliTelecom</a> , <a href="http://www.dingtalk.com/" ref="nofollow">DingTalk</a> , <a href="http://ju.taobao.com/" ref="nofollow">Juhuasuan</a> , <a href="http://www.taobao.com/" ref="nofollow">Taobao Markertplace</a> , <a href="http://www.tmall.com/" ref="nofollow">Tmall</a> , <a href="http://www.xiami.com/" ref="nofollow">Xiami</a> , <a href="http://www.yunos.com/" ref="nofollow">Юнос</a> , <a href="http://www.1688.com/" ref="nofollow">1688</a></dd>
+			</dl>
+		</div>
+		<div class="sf-download-app"><a class="android-link" href="https://play.google.com/store/apps/details?id=com.alibaba.aliexpresshd" ref="nofollow" target="_blank">Google Play </a><a class="iphone-link" href="https://itunes.apple.com/us/app/aliexpress/id436672029" ref="nofollow" target="_blank">App Store</a></div>
+	  	 
+	</div>
+</div>
+
+<div class="footer-copywrite">
+    <div class="container">
+	    
+          <a href="https://rule.alibaba.com/rule/detail/2034.htm?spm=2114.13010308.0.0.DZJD3D" data-spm-anchor-id="2114.13010308.0.0"><font class="goog-text-highlight">Политика конфиденциальности</font></a> 
+		  - <a href="https://rule.alibaba.com/rule/detail/2041.htm"><font class="goog-text-highlight">Условия использования</font></a> 
+		  - <a href="https://rule.alibaba.com/rule/detail/5038.htm"><font class="goog-text-highlight">Руководство по </font><font class="goog-text-highlight">соблюдению правопорядка</font></a>
+		  © 2010-2017 Aliexpress.com. Все права защищены.
+        	   
+	</div>
+</div>
+
+<script>
+    /* <![CDATA[ */
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17640202-1']);
+    _gaq.push(['_setDomainName', 'aliexpress.com']);
+    if(window.GaData){
+        if(GaData.productIds){_gaq.push(['_setCustomVar', 3, 'prodid', GaData.productIds]);}
+        if(GaData.totalValue){_gaq.push(['_setCustomVar', 4, 'totalValue', GaData.totalValue]);}
+        if(GaData.pageType)  {_gaq.push(['_setCustomVar', 5, 'pageType', GaData.pageType]);}
+    }
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    /* ]]> */
+</script>
+<script>
+    if (!window.recentlyviewedi18n) {
+        window.recentlyviewedi18n = {};
+    }
+    window.recentlyviewedi18n.recentlyviewedContent = '$!{ctx.i18n.getCommon("recentlyviewed@recentlyviewed_content",$ctx.session.locale)}';
+    window.recentlyviewedi18n.viewMoreAction = '$!{ctx.i18n.getCommon("viewmore@recentlyviewed_action",$ctx.session.locale)}';
+    window.recentlyviewedi18n.nothingviewedContent = '$!{ctx.i18n.getCommon("nothingviewed@recentlyviewed_content",$ctx.session.locale)}';
+    window.recentlyviewedi18n.shopnowAction = '$!{ctx.i18n.getCommon("shopnow@recentlyviewed_action",$ctx.session.locale)}';
+    window.recentlyviewedi18n.turnoffcontent = '$!{ctx.i18n.getCommon("turnoffcontent@recentlyviewed_content",$ctx.session.locale)}';
+    window.recentlyviewedi18n.tunonAction = '$!{ctx.i18n.getCommon("tunon@rencentlyviewed_action",$ctx.session.locale)}';
+</script>
+<!--yakult footer-->
+
+</body>
+</html>
