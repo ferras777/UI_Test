@@ -11,13 +11,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCase1 {
-
+public class TestCase4 {
     SoftAssert softAssert = new SoftAssert();
 
     WebDriver driver;
@@ -40,7 +38,7 @@ public class TestCase1 {
     }
 
     @Test
-    public void testCase1() {
+    public void testCase4() {
         String login = "jasex11393@in4mail.net";
         String password = "qaz123";
 
@@ -52,7 +50,7 @@ public class TestCase1 {
         try {
             driver.findElement(By.className("close-layer")).click();
         } catch (NoSuchElementException e) {
-            System.out.print("No advertisement");
+            System.out.println("No advertisement");
         }
 
         try {
@@ -73,22 +71,12 @@ public class TestCase1 {
             System.out.println("Registration not required");
         }
 
+
+
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 
-        driver.switchTo().defaultContent();
-        driver.findElement(By.linkText("Сообщения")).click();
-        driver.findElement(By.linkText("История сообщений")).click();
-        ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
-
-        driver.findElement(By.xpath("/html/body/div[5]/div/div[2]/div[2]" +
-                "/div/div[2]/div/div/div/div[2]/label/input")).sendKeys("9999");
-        driver.findElement(By.cssSelector(".ui-button.ui-button-normal.ui-button-small")).click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        String actualResult = driver.findElement(By.className("ui-pagination-active")).getText();
-        String expectedResult = "9999";
-        assertEquals(actualResult, expectedResult);
-        driver.close();
-        driver.switchTo().window(tabs2.get(0));
+        driver.findElement(By.linkText("Мой профиль")).click();
+        driver.findElement(By.linkText("Улучшить перевод")).click();
+        assertEquals(driver.getCurrentUrl(), "https://aliexpress.ru/home.htm");
     }
 }

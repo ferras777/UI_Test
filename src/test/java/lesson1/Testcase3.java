@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
-public class Testcase0003 {
+public class Testcase3 {
     SoftAssert softAssert = new SoftAssert();
 
     WebDriver driver;
