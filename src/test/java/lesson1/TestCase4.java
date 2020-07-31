@@ -2,7 +2,6 @@ package lesson1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -66,11 +65,9 @@ public class TestCase4 {
             driver.findElement(By.id("fm-login-password")).sendKeys(password);
             // 8. Click submit button
             driver.findElement(By.className("password-login")).click();
-        }
-        catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             System.out.println("Registration not required");
         }
-
 
 
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
