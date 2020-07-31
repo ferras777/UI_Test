@@ -52,7 +52,7 @@ public class TestCase5 {
             System.out.print("No advertisement");
         }
 
-        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div[2]/div/div/a")).click();
+        driver.findElement(By.className("right-cart-icon")).click();
 
         driver.findElement(By.xpath("/html/body/div[5]/div/div/p/a[2]")).click();
 
@@ -61,12 +61,14 @@ public class TestCase5 {
             driver.findElement(By.id("fm-login-id")).sendKeys(login);
             // 7. Enter password
             driver.findElement(By.id("fm-login-password")).sendKeys(password);
-            // 8. Click submit button
-            driver.findElement(By.className("password-login")).click();
+
         }
         catch (NoSuchElementException e) {
             System.out.println("Registration not required");
         }
+        // 8. Click submit button
+        driver.findElement(By.className("fm-button")).click();
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/div[5]/div/div/p/a[2]")).click();
     }
 }
