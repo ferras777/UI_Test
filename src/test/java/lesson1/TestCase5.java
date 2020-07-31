@@ -12,8 +12,6 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertEquals;
-
 public class TestCase5 {
     SoftAssert softAssert = new SoftAssert();
 
@@ -51,24 +49,24 @@ public class TestCase5 {
         } catch (NoSuchElementException e) {
             System.out.print("No advertisement");
         }
-
+        // 3. Click on cart
         driver.findElement(By.className("right-cart-icon")).click();
-
-        driver.findElement(By.xpath("/html/body/div[5]/div/div/p/a[2]")).click();
+        // 4. Click on authorization link
+        driver.findElement(By.linkText("авторизуйтесь")).click();
 
         try {
-            // 6. Enter login
+            // 1. Enter login
             driver.findElement(By.id("fm-login-id")).sendKeys(login);
-            // 7. Enter password
+            // 2. Enter password
             driver.findElement(By.id("fm-login-password")).sendKeys(password);
-
-        }
-        catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             System.out.println("Registration not required");
         }
-        // 8. Click submit button
+        // 8. Click enter button
         driver.findElement(By.className("fm-button")).click();
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        driver.findElement(By.xpath("/html/body/div[5]/div/div/p/a[2]")).click();
+        // 9. Wait 5 sec
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        // 10. Click on authorization link
+        driver.findElement(By.linkText("авторизуйтесь")).click();
     }
 }
