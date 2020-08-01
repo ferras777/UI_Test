@@ -49,23 +49,30 @@ public class TestCase5 {
         } catch (NoSuchElementException e) {
             System.out.print("No advertisement");
         }
+
         // 3. Click on cart
         driver.findElement(By.className("right-cart-icon")).click();
+
         // 4. Click on authorization link
         driver.findElement(By.linkText("авторизуйтесь")).click();
 
         try {
             // 1. Enter login
             driver.findElement(By.id("fm-login-id")).sendKeys(login);
+
             // 2. Enter password
             driver.findElement(By.id("fm-login-password")).sendKeys(password);
+
         } catch (NoSuchElementException e) {
             System.out.println("Registration not required");
         }
+
         // 8. Click enter button
         driver.findElement(By.className("fm-button")).click();
+
         // 9. Wait 5 sec
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         // 10. Click on authorization link
         driver.findElement(By.linkText("авторизуйтесь")).click();
     }

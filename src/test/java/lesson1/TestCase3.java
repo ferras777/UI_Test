@@ -43,7 +43,7 @@ public class TestCase3 {
         try {
             driver.findElement(By.className("close-layer")).click();
         } catch (NoSuchElementException e) {
-            System.out.print("No advertisement");
+            System.out.println("No advertisement");
         }
         // 3. Click on link Phones and accessories
         driver.findElement(By.linkText("Телефоны и аксессуары")).click();

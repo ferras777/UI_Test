@@ -48,24 +48,25 @@ public class TestCase9 {
         }
         // 3. Click on link Phones and accessories
         driver.findElement(By.linkText("Приложение")).click();
+
         // 4. Click on Google play button
         driver.findElement(By.xpath("/html/body/div[5]/div/div[3]/a")).click();
+
         // Gets array of tabs
         ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+
         // 5. Switch to new tab
         driver.switchTo().window(newTab.get(1));
 
-        String expectedTitle = "Приложения в Google Play – AliExpress онлайн магазин. Покупай со скидками!";
+        String expectedTitle = "Приложения в Google Play – AliExpress онлайн магазин. Покупай со скидками!";
         String actualTitle = driver.getTitle();
 
         // 4. Equals titles
-        try {
-            assertEquals(actualTitle, expectedTitle);
-        } catch (AssertionError e) {
-            System.out.println("WRONG TITLE");
-        }
+        assertEquals(actualTitle, expectedTitle);
+
         // Close second tab
         driver.close();
+
         // Switch to first tab
         driver.switchTo().window(newTab.get(0));
     }
