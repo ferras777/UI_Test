@@ -1,4 +1,4 @@
-package lesson1;
+package lesson1.Positive;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -12,7 +12,9 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestCase5 {
+import static org.testng.Assert.assertEquals;
+
+public class TestCase6 {
     SoftAssert softAssert = new SoftAssert();
 
     WebDriver driver;
@@ -36,9 +38,6 @@ public class TestCase5 {
 
     @Test
     public void testcase5() {
-        String login = "jasex11393@in4mail.net";
-        String password = "qaz123";
-
         // 1. Navigate aliexpress
         driver.navigate().to("https://aliexpress.ru/");
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.MILLISECONDS);
@@ -49,31 +48,13 @@ public class TestCase5 {
         } catch (NoSuchElementException e) {
             System.out.print("No advertisement");
         }
-
         // 3. Click on cart
         driver.findElement(By.className("right-cart-icon")).click();
+        // 4. Get title of page
+        String actual = driver.getTitle();
+        // 5. Expected
+        String expected = "Your AliExpress shopping cart - Buy directly from China";
 
-        // 4. Click on authorization link
-        driver.findElement(By.linkText("авторизуйтесь")).click();
-
-        try {
-            // 1. Enter login
-            driver.findElement(By.id("fm-login-id")).sendKeys(login);
-
-            // 2. Enter password
-            driver.findElement(By.id("fm-login-password")).sendKeys(password);
-
-        } catch (NoSuchElementException e) {
-            System.out.println("Registration not required");
-        }
-
-        // 8. Click enter button
-        driver.findElement(By.className("fm-button")).click();
-
-        // 9. Wait 5 sec
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-        // 10. Click on authorization link
-        driver.findElement(By.linkText("авторизуйтесь")).click();
+        assertEquals(actual, expected);
     }
 }

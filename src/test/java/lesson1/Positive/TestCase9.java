@@ -1,4 +1,4 @@
-package lesson1;
+package lesson1.Positive;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;

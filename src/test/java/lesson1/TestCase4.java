@@ -60,7 +60,7 @@ public class TestCase4 {
             // 5. Switch to frame
             driver.switchTo().frame("alibaba-login-box");
             // 6. Enter login
-            driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/form/div[1]/div/input")).sendKeys(login);
+//            driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/form/div[1]/div/input")).sendKeys(login);
             // 7. Enter password
             driver.findElement(By.id("fm-login-password")).sendKeys(password);
             // 8. Click submit button
@@ -71,8 +71,10 @@ public class TestCase4 {
 
 
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-
-        driver.findElement(By.linkText("Мой профиль")).click();
+        driver.switchTo().defaultContent();
+        driver.findElement(By.xpath("/html/body/div[1]/div[5]/div[1]/" +
+                "div[2]/div/div[4]/div[2]/div[3]/ul/li[1]/a")).click();
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         driver.findElement(By.linkText("Улучшить перевод")).click();
         assertEquals(driver.getCurrentUrl(), "https://aliexpress.ru/home.htm");
     }
