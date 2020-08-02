@@ -1,51 +1,24 @@
 package lesson1.Positive;
 
+import lesson1.TestBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCase9 {
-    SoftAssert softAssert = new SoftAssert();
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void beforeMethod() {
-        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
-
-        driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
-    }
-
-    @AfterMethod
-    public void afterMethod() {
-        driver.close();
-    }
+public class TestCase9 extends TestBase {
 
     @Test
     public void testcase9() {
 
         // 1. Navigate aliexpress
-        driver.navigate().to("https://aliexpress.ru/");
-        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.MILLISECONDS);
+        driver.navigate().to(SITE_URL);
 
         // 2. Close advertisement
-        try {
-            driver.findElement(By.className("close-layer")).click();
-        } catch (NoSuchElementException e) {
-            System.out.println("No advertisement");
-        }
+        closeAdvertisement();
+
         // 3. Click on link Phones and accessories
         driver.findElement(By.linkText("Приложение")).click();
 
@@ -53,7 +26,7 @@ public class TestCase9 {
         driver.findElement(By.xpath("/html/body/div[5]/div/div[3]/a")).click();
 
         // Gets array of tabs
-        ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> newTab = new ArrayList<>(driver.getWindowHandles());
 
         // 5. Switch to new tab
         driver.switchTo().window(newTab.get(1));

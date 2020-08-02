@@ -2,18 +2,9 @@ package lesson1.Negative;
 
 import lesson1.TestBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.NoSuchFrameException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
@@ -22,10 +13,8 @@ public class TestCase1 extends TestBase {
     @Test
     public void testCase1() {
 
-
-        // 1. Navigate aliexpress
+        // 1. Navigate site
         driver.navigate().to(SITE_URL);
-
 
         // 2. Close advertisement
         closeAdvertisement();
@@ -43,7 +32,7 @@ public class TestCase1 extends TestBase {
         driver.findElement(By.linkText("История сообщений")).click();
 
         // 7. Get array of tabs
-        ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+        ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
 
         // 8. Switch to second tab
         driver.switchTo().window(tabs2.get(1));
