@@ -1,5 +1,6 @@
 package lesson1.Negative;
 
+import lesson1.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
@@ -16,65 +17,21 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCase1 {
-
-    SoftAssert softAssert = new SoftAssert();
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void beforeMethod() {
-        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--user-data-dir=src\\main\\resources\\Profiles");
-        options.addArguments("--profile-directory=Profile 1");
-
-        driver = new ChromeDriver(options);
-
-        driver.manage().window().maximize();
-    }
-
-    @AfterMethod
-    public void afterMethod() {
-        driver.close();
-    }
+public class TestCase1 extends TestBase {
 
     @Test
     public void testCase1() {
-        String login = "jasex11393@in4mail.net";
-        String password = "qaz123";
+
 
         // 1. Navigate aliexpress
-        driver.navigate().to("https://aliexpress.ru/");
-        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.MILLISECONDS);
+        driver.navigate().to(SITE_URL);
+
 
         // 2. Close advertisement
-        try {
-            driver.findElement(By.className("close-layer")).click();
-        } catch (NoSuchElementException e) {
-            System.out.println("No advertisement");
-        }
+        closeAdvertisement();
 
         // 3. Try enter in acc
-        try {
-            // 3. Click Enter button
-            driver.findElement(By.linkText("Войти")).click();
-            // 4. Wait 3 sec for load frame
-            driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
-            // 5. Switch to frame
-            driver.switchTo().frame("alibaba-login-box");
-            // 6. Enter login
-//            driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/form/div[1]/div/input")).sendKeys(login);
-            // 7. Enter password
-            driver.findElement(By.id("fm-login-password")).sendKeys(password);
-            // 8. Click submit button
-            driver.findElement(By.className("password-login")).click();
-        }
-        catch (NoSuchElementException e) {
-            System.out.println("Registration not required");
-        }
-
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+        loginInAcc();
 
         // 4. Switch to main page
         driver.switchTo().defaultContent();
@@ -97,7 +54,6 @@ public class TestCase1 {
 
         // 10. Submit page number
         driver.findElement(By.cssSelector(".ui-button.ui-button-normal.ui-button-small")).click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         String actualResult = driver.findElement(By.className("ui-pagination-active")).getText();
         String expectedResult = "9999";
