@@ -47,19 +47,19 @@ public class TestBase {
         }
     }
 
-    public void loginInAcc() {
+    public void loginAcc() {
         try {
-            // 3. Click Enter button
+            // 1. Click Enter button
             driver.findElement(By.linkText("Войти")).click();
-            // 4. Wait 3 sec for load frame
+            // 2. Wait 3 sec for load frame
             driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
-            // 5. Switch to frame
+            // 3. Switch to frame
             driver.switchTo().frame("alibaba-login-box");
-            // 6. Enter login
+            // 4. Enter login
 //            driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/form/div[1]/div/input")).sendKeys(LOGIN);
-            // 7. Enter password
+            // 5. Enter password
             driver.findElement(By.id("fm-login-password")).sendKeys(PASSWORD);
-            // 8. Click submit button
+            // 6. Click submit button
             driver.findElement(By.className("password-login")).click();
         }
         catch (NoSuchElementException e) {

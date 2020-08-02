@@ -19,7 +19,7 @@ public class TestCase4 extends TestBase {
         closeAdvertisement();
 
         // 3. Login in acc
-        loginInAcc();
+        loginAcc();
 
         // 4. Switch to main page
         driver.switchTo().defaultContent();

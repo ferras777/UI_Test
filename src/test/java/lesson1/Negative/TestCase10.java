@@ -21,7 +21,7 @@ public class TestCase10 extends TestBase {
         closeAdvertisement();
 
         // 3. Try enter in acc
-        loginInAcc();
+        loginAcc();
 
         // 4. Switch to main page
         driver.switchTo().defaultContent();
