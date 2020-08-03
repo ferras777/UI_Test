@@ -10,6 +10,9 @@ import static org.testng.Assert.assertEquals;
 
 public class TestCase1 extends TestBase {
 
+    //TODO change naming
+    //TODO use only css-selectors
+
     @Test
     public void testCase1() {
 

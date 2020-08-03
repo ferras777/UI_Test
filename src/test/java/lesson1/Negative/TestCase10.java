@@ -11,6 +11,8 @@ import static org.testng.Assert.assertEquals;
 
 public class TestCase10 extends TestBase {
 
+    //TODO java code convention
+
     @Test
     public void testCase10() {
         // 1. Navigate site
