@@ -11,6 +11,9 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
+//TODO move class to "src/main" folder
+//TODO base class should be universal
+
 public class TestBase {
     public WebDriver driver;
     public WebDriverWait webDriverWait;
@@ -47,6 +50,9 @@ public class TestBase {
         }
     }
 
+    //TODO delete commented code
+    //TODO change naming
+    //TODO use only css-selectors
     public void loginAcc() {
         try {
             // 1. Click Enter button
