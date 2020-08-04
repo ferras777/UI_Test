@@ -62,7 +62,7 @@ public class TestBase {
             // 3. Switch to frame
             driver.switchTo().frame("alibaba-login-box");
             // 4. Enter login
-//            driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/form/div[1]/div/input")).sendKeys(LOGIN);
+            driver.findElement(By.id("fm-login-id")).sendKeys(LOGIN);
             // 5. Enter password
             driver.findElement(By.id("fm-login-password")).sendKeys(PASSWORD);
             // 6. Click submit button
