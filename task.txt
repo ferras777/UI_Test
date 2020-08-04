@@ -1,0 +1,5 @@
+1. Fix todo's.
+2. Rewrite current tests to Page Factory
+3. Add webdrivermanager dependency and implement it in tests.
+4. Split tests to test suits by testng.xml files.
+5. Rewrite test cases and bugs in https://docs.google.com/document/d/1gqTqPFlidmlDAtHuXm0M6QilkK4TJcBamaxgFH83o0s/edit?usp=sharing

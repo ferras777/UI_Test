@@ -23,4 +23,8 @@ public class NavigationBar {
     public void fillSearchField(Credentials value) {
         searchField.sendKeys(value.login);
     }
+
+    public void openTab(int tabIndex) {
+
+    }
 }
