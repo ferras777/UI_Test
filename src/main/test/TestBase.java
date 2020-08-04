@@ -1,4 +1,4 @@
-package lesson1;
+package test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 //TODO move class to "src/main" folder
 //TODO base class should be universal
 
-public class TestBase {
+public abstract class TestBase {
     public WebDriver driver;
     public WebDriverWait webDriverWait;
 
@@ -53,7 +53,7 @@ public class TestBase {
     //TODO delete commented code
     //TODO change naming
     //TODO use only css-selectors
-    public void loginAcc() {
+    public void loginAcc(Credentials credentials) {
         try {
             // 1. Click Enter button
             driver.findElement(By.linkText("Войти")).click();
@@ -64,7 +64,7 @@ public class TestBase {
             // 4. Enter login
 //            driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/form/div[1]/div/input")).sendKeys(LOGIN);
             // 5. Enter password
-            driver.findElement(By.id("fm-login-password")).sendKeys(PASSWORD);
+            driver.findElement(By.id("fm-login-password")).sendKeys(credentials.login);
             // 6. Click submit button
             driver.findElement(By.className("password-login")).click();
         }

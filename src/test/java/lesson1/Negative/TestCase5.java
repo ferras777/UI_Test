@@ -1,6 +1,6 @@
 package lesson1.Negative;
 
-import lesson1.TestBase;
+import test.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.Test;

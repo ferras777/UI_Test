@@ -1,6 +1,6 @@
 package lesson1.Positive;
 
-import lesson1.TestBase;
+import test.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;

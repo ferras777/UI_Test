@@ -1,6 +1,8 @@
 package lesson1.Positive;
 
-import lesson1.TestBase;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import test.TestBase;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -10,8 +12,13 @@ import static org.testng.Assert.assertEquals;
 
 public class TestCase9 extends TestBase {
 
+    @BeforeSuite
+    public void beforeSuite() {
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+    }
+
     @Test
-    public void testcase9() {
+    public void shopUrlTest() {
 
         // 1. Navigate aliexpress
         driver.navigate().to(SITE_URL);
