@@ -26,7 +26,7 @@ public class TestCase9 extends TestBase {
         driver.findElement(By.xpath("/html/body/div[5]/div/div[3]/a")).click();
 
         // Gets array of tabs
-        ArrayList<String> newTab = new ArrayList<>(driver.getWindowHandles());
+        ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
 
         // 5. Switch to new tab
         driver.switchTo().window(newTab.get(1));

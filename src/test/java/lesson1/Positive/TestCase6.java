@@ -29,7 +29,7 @@ public class TestCase6 extends TestBase {
                 "/ul/div[1]/li[1]/div/div[1]/div/a")).click();
 
         // 7. Get array of tabs
-        ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
 
         // 8. Switch to second tab
         driver.switchTo().window(tabs2.get(1));

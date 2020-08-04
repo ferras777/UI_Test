@@ -35,7 +35,7 @@ public class TestCase1 extends TestBase {
         driver.findElement(By.linkText("История сообщений")).click();
 
         // 7. Get array of tabs
-        ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
 
         // 8. Switch to second tab
         driver.switchTo().window(tabs2.get(1));

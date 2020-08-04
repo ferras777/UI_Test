@@ -36,7 +36,7 @@ public class TestCase10 extends TestBase {
         driver.findElement(By.cssSelector(".ui-fixed-panel-unit.ui-fixed-panel-survey")).click();
 
         // 7. Get array of tabs
-        ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
 
         // 8. Switch to second tab
         driver.switchTo().window(tabs2.get(1));
