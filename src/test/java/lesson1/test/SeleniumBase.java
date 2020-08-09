@@ -15,13 +15,12 @@ import java.util.concurrent.TimeUnit;
 //TODO move class to "src/main" folder
 //TODO base class should be universal
 
-public class SeleniumBase {
+public abstract class SeleniumBase {
     public WebDriver driver;
     public WebDriverWait webDriverWait;
 
     public String SITE_URL = "https://aliexpress.ru/";
-    public String LOGIN = "jasex11393@in4mail.net";
-    public String PASSWORD = "qaz123";
+
 
     @BeforeMethod
     public void beforeMethod() {
@@ -51,10 +50,9 @@ public class SeleniumBase {
         }
     }
 
-    //TODO delete commented code
     //TODO change naming
     //TODO use only css-selectors
-    public void loginAcc() {
+    public void loginAcc(Credentials credentials) {
         try {
             // 1. Click Enter button
             driver.findElement(By.linkText("Войти")).click();
@@ -63,9 +61,10 @@ public class SeleniumBase {
             // 3. Switch to frame
             driver.switchTo().frame("alibaba-login-box");
             // 4. Enter login
-            driver.findElement(By.id("fm-login-id")).sendKeys(LOGIN);
+            driver.findElement(By.id("fm-login-id")).clear();
+            driver.findElement(By.id("fm-login-id")).sendKeys(credentials.LOGIN);
             // 5. Enter password
-            driver.findElement(By.id("fm-login-password")).sendKeys(PASSWORD);
+            driver.findElement(By.id("fm-login-password")).sendKeys(credentials.PASSWORD);
             // 6. Click submit button
             driver.findElement(By.className("password-login")).click();
         }
