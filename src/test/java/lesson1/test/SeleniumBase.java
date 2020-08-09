@@ -1,5 +1,6 @@
-package lesson1;
+package lesson1.test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 //TODO move class to "src/main" folder
 //TODO base class should be universal
 
-public class TestBase {
+public class SeleniumBase {
     public WebDriver driver;
     public WebDriverWait webDriverWait;
 
@@ -24,7 +25,7 @@ public class TestBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--user-data-dir=src\\main\\resources\\Profiles");
