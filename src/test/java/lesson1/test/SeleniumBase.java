@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,8 +23,8 @@ public abstract class SeleniumBase {
     public String SITE_URL = "https://aliexpress.ru/";
 
 
-    @BeforeMethod
-    public void beforeMethod() {
+    @BeforeSuite
+    public void beforeSuite() {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
