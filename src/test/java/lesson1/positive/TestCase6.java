@@ -1,6 +1,6 @@
 package lesson1.positive;
 
-import lesson1.pages.NavigationBar;
+import lesson1.pages.SearchBar;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
@@ -12,13 +12,13 @@ import java.util.ArrayList;
 import static org.testng.Assert.assertEquals;
 
 public class TestCase6 extends SeleniumBase {
-    private NavigationBar navBar;
+    private SearchBar searchBar;
 
 
     @BeforeMethod
     public void beforeMethod() {
 
-        navBar = PageFactory.initElements(driver, NavigationBar.class);
+        searchBar = PageFactory.initElements(driver, SearchBar.class);
     }
 
     @Test
@@ -31,11 +31,11 @@ public class TestCase6 extends SeleniumBase {
 
         // 3. Add text in search box
 //        driver.findElement(By.id("search-key")).sendKeys("кошельки кожаные");
-        navBar.fillSearchField("кошельки кожаные");
+        searchBar.fillSearchField("кошельки кожаные");
 
 
         // 4. Click search button
-        navBar.clickSearchButton();
+        searchBar.clickSearchButton();
 //        driver.findElement(By.className("search-button")).click();
 
         // 5. Click on product

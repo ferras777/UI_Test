@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class NavigationBar extends SeleniumBase {
+public class SearchBar extends SeleniumBase {
 
     @FindBy(css = "#search-key")
     private WebElement searchField;
@@ -13,7 +13,7 @@ public class NavigationBar extends SeleniumBase {
     @FindBy(css = ".search-button")
     private WebElement searchButton;
 
-    public NavigationBar(WebDriver driver) {
+    public SearchBar(WebDriver driver) {
         this.driver = driver;
     }
 
