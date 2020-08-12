@@ -1,8 +1,11 @@
 package lesson1.negative;
 
+import lesson1.pages.Authorization;
 import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -11,6 +14,12 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 
 public class TestCase10 extends SeleniumBase {
+    private Authorization authorization;
+
+    @BeforeMethod
+    public void beforeMethod() {
+        authorization = PageFactory.initElements(driver, Authorization.class);
+    }
 
     //TODO java code convention
 
@@ -24,7 +33,7 @@ public class TestCase10 extends SeleniumBase {
         closeAdvertisement();
 
         // 3. Try enter in acc
-        loginAcc(Credentials.TEST_ACCOUNT_NEW_USER);
+        authorization.fromMainPage(Credentials.TEST_ACCOUNT_NEW_USER);
 
         // 4. Switch to main page
         driver.switchTo().defaultContent();

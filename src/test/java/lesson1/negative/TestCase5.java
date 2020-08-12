@@ -1,12 +1,22 @@
 package lesson1.negative;
 
+import lesson1.pages.Authorization;
 import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TestCase5 extends SeleniumBase {
+
+    private Authorization authorization;
+
+    @BeforeMethod
+    public void beforeMethod() {
+        authorization = PageFactory.initElements(driver, Authorization.class);
+    }
 
     @Test
     public void testcase5() {
@@ -24,11 +34,10 @@ public class TestCase5 extends SeleniumBase {
 
         try {
             // 1. Enter login
-            driver.findElement(By.id("fm-login-id")).clear();
-            driver.findElement(By.id("fm-login-id")).sendKeys(Credentials.TEST_ACCOUNT_NEW_USER.LOGIN);
+            authorization.fillLoginField(Credentials.TEST_ACCOUNT_NEW_USER);
 
             // 2. Enter password
-            driver.findElement(By.id("fm-login-password")).sendKeys(Credentials.TEST_ACCOUNT_NEW_USER.PASSWORD);
+            authorization.fillPasswordField(Credentials.TEST_ACCOUNT_NEW_USER);
 
         } catch (NoSuchElementException e) {
             System.out.println("Registration not required");

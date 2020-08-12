@@ -1,15 +1,23 @@
 package lesson1.negative;
 
+import lesson1.pages.Authorization;
 import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
 public class TestCase4 extends SeleniumBase {
+    private Authorization authorization;
 
+    @BeforeMethod
+    public void beforeMethod() {
+        authorization = PageFactory.initElements(driver, Authorization.class);
+    }
 
     @Test
     public void testCase4() {
@@ -20,7 +28,7 @@ public class TestCase4 extends SeleniumBase {
         closeAdvertisement();
 
         // 3. Login in acc
-        loginAcc(Credentials.TEST_ACCOUNT_NEW_USER);
+        authorization.fromMainPage(Credentials.TEST_ACCOUNT_NEW_USER);
 
         // 4. Switch to main page
         driver.switchTo().defaultContent();

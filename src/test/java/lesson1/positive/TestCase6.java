@@ -30,13 +30,11 @@ public class TestCase6 extends SeleniumBase {
         closeAdvertisement();
 
         // 3. Add text in search box
-//        driver.findElement(By.id("search-key")).sendKeys("кошельки кожаные");
         searchBar.fillSearchField("кошельки кожаные");
 
 
         // 4. Click search button
         searchBar.clickSearchButton();
-//        driver.findElement(By.className("search-button")).click();
 
         // 5. Click on product
         driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]" +
