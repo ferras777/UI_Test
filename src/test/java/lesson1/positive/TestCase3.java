@@ -1,5 +1,6 @@
 package lesson1.positive;
 
+import lesson1.pages.Advertisement;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -11,13 +12,10 @@ public class TestCase3 extends SeleniumBase {
     @Test
     public void testcase3() {
 
-        // 1. Navigate aliexpress
+        // Navigate aliexpress
         driver.navigate().to(SITE_URL);
 
-        // 2. Close advertisement
-        closeAdvertisement();
-
-        // 3. Click on link Phones and accessories
+        // Click on link Phones and accessories
         driver.findElement(By.linkText("Телефоны и аксессуары")).click();
 
         // Expected title
@@ -26,7 +24,7 @@ public class TestCase3 extends SeleniumBase {
         // Actual title
         String actualTitle = driver.getTitle();
 
-        // 4. Equals titles
+        // Equals titles
         assertEquals(actualTitle, expectedTitle);
     }
 }

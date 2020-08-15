@@ -1,5 +1,6 @@
 package lesson1.positive;
 
+import lesson1.pages.Advertisement;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -13,28 +14,25 @@ public class TestCase9 extends SeleniumBase {
     @Test
     public void testcase9() {
 
-        // 1. Navigate aliexpress
+        // Navigate aliexpress
         driver.navigate().to(SITE_URL);
 
-        // 2. Close advertisement
-        closeAdvertisement();
-
-        // 3. Click on link Phones and accessories
+        // Click on link Phones and accessories
         driver.findElement(By.linkText("Приложение")).click();
 
-        // 4. Click on Google play button
+        // Click on Google play button
         driver.findElement(By.xpath("/html/body/div[5]/div/div[3]/a")).click();
 
         // Gets array of tabs
         ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
 
-        // 5. Switch to new tab
+        // Switch to new tab
         driver.switchTo().window(newTab.get(1));
 
         String expectedTitle = "Приложения в Google Play – AliExpress онлайн магазин. Покупай со скидками!";
         String actualTitle = driver.getTitle();
 
-        // 4. Equals titles
+        // Equals titles
         assertEquals(actualTitle, expectedTitle);
 
         // Close second tab

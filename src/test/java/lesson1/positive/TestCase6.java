@@ -1,5 +1,6 @@
 package lesson1.positive;
 
+import lesson1.pages.Advertisement;
 import lesson1.pages.SearchBar;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
@@ -23,53 +24,49 @@ public class TestCase6 extends SeleniumBase {
 
     @Test
     public void testcase6() {
-        // 1. Navigate aliexpress
+        // Navigate aliexpress
         driver.navigate().to(SITE_URL);
 
-        // 2. Close advertisement
-        closeAdvertisement();
-
-        // 3. Add text in search box
+        // Add text in search box
         searchBar.fillSearchField("кошельки кожаные");
 
-
-        // 4. Click search button
+        // Click search button
         searchBar.clickSearchButton();
 
-        // 5. Click on product
+        // Click on product
         driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]" +
                 "/ul/div[1]/li[1]/div/div[1]/div/a")).click();
 
-        // 7. Get array of tabs
+        // Get array of tabs
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
 
-        // 8. Switch to second tab
+        // Switch to second tab
         driver.switchTo().window(tabs2.get(1));
 
-        // 9. Get expected title of product
+        // Get expected title of product
         String expectedTitle = driver.findElement(By.className("product-title-text")).getText();
 
-        // 10. Click on property
+        // Click on property
         driver.findElement(By.xpath("/html/body/div[5]/div/div[2]/div/div[2]/div[7]/div/div/ul/li[1]")).click();
 
-        // 11. Close cookies banner
+        // Close cookies banner
         driver.findElement(By.id("cookies-banner__container__close-btn")).click();
 
-        // 12. Add product in cart
+        // Add product in cart
         driver.findElement(By.cssSelector(".next-btn.next-large.next-btn-primary.addcart")).click();
 
-        // 13. Navigate to cart
+        // Navigate to cart
         driver.navigate().to("https://shoppingcart.aliexpress.ru/shopcart/shopcartDetail.htm");
 
-        // 14. Get actual title of product in cart
+        // Get actual title of product in cart
         String actualTitle = driver.findElement(By.className("product-name-link")).getText();
 
         assertEquals(actualTitle, expectedTitle);
 
-        // 12. Closed second tab
+        // Closed second tab
         driver.close();
 
-        // 13. Switch to first tab
+        // Switch to first tab
         driver.switchTo().window(tabs2.get(0));
     }
 }

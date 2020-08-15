@@ -1,8 +1,6 @@
 package lesson1.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class SeleniumBase {
     public WebDriver driver;
-    public WebDriverWait webDriverWait;
+    public WebDriverWait wait;
 
     public String SITE_URL = "https://aliexpress.ru/";
 
@@ -34,7 +32,7 @@ public abstract class SeleniumBase {
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        webDriverWait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 30);
     }
 
     @AfterMethod
@@ -42,11 +40,4 @@ public abstract class SeleniumBase {
         driver.close();
     }
 
-    public void closeAdvertisement() {
-        try {
-            driver.findElement(By.className("close-layer")).click();
-        } catch (NoSuchElementException e) {
-            System.out.println("No advertisement");
-        }
-    }
 }

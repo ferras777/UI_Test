@@ -1,5 +1,6 @@
 package lesson1.negative;
 
+import lesson1.pages.Advertisement;
 import lesson1.pages.Authorization;
 import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
@@ -12,10 +13,12 @@ import org.testng.annotations.Test;
 public class TestCase5 extends SeleniumBase {
 
     private Authorization authorization;
+    private Advertisement advertisement;
 
     @BeforeMethod
     public void beforeMethod() {
         authorization = PageFactory.initElements(driver, Authorization.class);
+        advertisement = PageFactory.initElements(driver, Advertisement.class);
     }
 
     @Test
@@ -24,13 +27,13 @@ public class TestCase5 extends SeleniumBase {
         driver.navigate().to(SITE_URL);
 
         // 2. Close advertisement
-        closeAdvertisement();
+        advertisement.closeAdvertisementLayer();
 
         // 3. Click on cart
-        driver.findElement(By.className("right-cart-icon")).click();
+        driver.findElement(By.cssSelector(".right-cart-icon")).click();
 
         // 4. Click on authorization link
-        driver.findElement(By.linkText("авторизуйтесь")).click();
+        driver.findElement(By.cssSelector("[ae_button_type=\"login\"]")).click();
 
         try {
             // 1. Enter login
@@ -44,9 +47,9 @@ public class TestCase5 extends SeleniumBase {
         }
 
         // 5. Click enter button
-        driver.findElement(By.className("fm-button")).click();
+        driver.findElement(By.cssSelector(".fm-button")).click();
 
         // 6. Click on authorization link
-        driver.findElement(By.linkText("авторизуйтесь")).click();
+        driver.findElement(By.cssSelector("[ae_button_type=\"login\"]")).click();
     }
 }
