@@ -40,26 +40,25 @@ public class TestCase1 extends SeleniumBase {
         driver.switchTo().defaultContent();
 
         // Enter messages
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".message-icon.i-message-icon")));
-        driver.findElement(By.cssSelector(".message-icon.i-message-icon")).click();
+        element(".message-icon.i-message-icon").click();
 
         // Enter messages history (can't use css)
-        driver.findElement(By.linkText("История сообщений")).click();
+        element("a[href*=\"buyerMsgList.htm\"]").click();
 
         // Switch to second tab
         tabs.switchToTab(1);
 
         // Enter page number 9999.
-        driver.findElement(By.cssSelector("[data-role=\"input\"]")).sendKeys("9999");
+        element("[data-role=\"input\"]").sendKeys("9999");
 
         // Submit page number
-        driver.findElement(By.cssSelector(".ui-button.ui-button-normal.ui-button-small")).click();
+        element(".ui-button.ui-button-normal.ui-button-small").click();
 
         String actualResult = driver.findElement(By.cssSelector(".ui-pagination-active")).getText();
         String expectedResult = "9999";
 
         // If it passed, bug fixed.
-        assertNotEquals(actualResult, expectedResult);
+        assertEquals(actualResult, expectedResult);
 
         // Closed second tab
         driver.close();

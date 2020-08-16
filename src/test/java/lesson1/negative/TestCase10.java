@@ -2,10 +2,12 @@ package lesson1.negative;
 
 import lesson1.pages.Advertisement;
 import lesson1.pages.Authorization;
+import lesson1.pages.Tabs;
 import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -16,10 +18,14 @@ import static org.testng.Assert.assertEquals;
 
 public class TestCase10 extends SeleniumBase {
     private Authorization authorization;
+    private Advertisement advertisement;
+    private Tabs tabs;
 
     @BeforeMethod
     public void beforeMethod() {
         authorization = PageFactory.initElements(driver, Authorization.class);
+        advertisement = PageFactory.initElements(driver, Advertisement.class);
+        tabs = PageFactory.initElements(driver, Tabs.class);
     }
 
     //TODO java code convention
@@ -29,38 +35,37 @@ public class TestCase10 extends SeleniumBase {
         // Navigate site
         driver.navigate().to(SITE_URL);
 
+        // Close advertisement
+        advertisement.closeAdvertisementLayer();
+
         // Try enter in acc
         authorization.fromMainPage(Credentials.TEST_ACCOUNT_NEW_USER);
 
         // Switch to main page
         driver.switchTo().defaultContent();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 
         // Enter in profile
-        driver.findElement(By.cssSelector(".aliexpress-icon.i-aliexpress-icon")).click();
+        element(".aliexpress-icon.i-aliexpress-icon").click();
 
         // Click on survey button
-        driver.findElement(By.cssSelector(".ui-fixed-panel-unit.ui-fixed-panel-survey")).click();
-
-        // Get array of tabs
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        element(".ui-fixed-panel-unit.ui-fixed-panel-survey").click();
 
         // Switch to second tab
-        driver.switchTo().window(tabs2.get(1));
+        tabs.switchToTab(1);
 
         // Click button send
-        driver.findElement(By.cssSelector(".ui-button")).click();
+        element(".ui-button.ui-button-primary.ui-button-medium.j-submit-survey-form").click();
 
         String actual = driver.findElement(By.tagName("pre")).getText();
         String expected = "{\"ec\":8,\"em\":\"forbidden\",\"data\":{}}";
 
-        // If it passed, bug still not fixed. Negative test?
+        // If it passed, bug still not fixed.
         assertEquals(actual, expected);
 
         // Closed second tab
         driver.close();
 
         // Switch to first tab
-        driver.switchTo().window(tabs2.get(0));
+        tabs.switchToTab(0);
     }
 }

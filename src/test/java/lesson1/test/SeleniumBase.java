@@ -1,9 +1,13 @@
 package lesson1.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
@@ -31,7 +35,7 @@ public abstract class SeleniumBase {
         driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 30);
     }
 
@@ -40,4 +44,12 @@ public abstract class SeleniumBase {
         driver.close();
     }
 
+    public WebElement element(String cssSelector) {
+        waitVisibilityOfElement(cssSelector);
+        return driver.findElement(By.cssSelector(cssSelector));
+    }
+
+    public void waitVisibilityOfElement(String cssSelector) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector)));
+    }
 }

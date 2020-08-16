@@ -36,8 +36,8 @@ public class TestCase7 extends SeleniumBase {
         driver.switchTo().defaultContent();
 
         // Scroll down to load products
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android-link")));
-        WebElement footer = driver.findElement(By.className("android-link"));
+        waitVisibilityOfElement(".android-link");
+        WebElement footer = driver.findElement(By.cssSelector(".android-link"));
 
         JavascriptExecutor je = (JavascriptExecutor) driver;
 
@@ -45,15 +45,13 @@ public class TestCase7 extends SeleniumBase {
         driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 
         // Click on product
-        driver.findElement(By.cssSelector("#redesign-just-for-you > ul > " +
-                "li:nth-child(1) > a > div:nth-child(1) > div")).click();
+        element("#redesign-just-for-you > ul > li:nth-child(1) > a > div:nth-child(1) > div").click();
 
         // Get title of product
         String expectedTitleOfProduct = driver.findElement(By.className("product-title-text")).getText();
 
         // Click button add to wishlist
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("add-wishlist")));
-        driver.findElement(By.className("add-wishlist")).click();
+        element(".add-wishlist").click();
 
         // Navigate to wishlist
         driver.navigate().to("https://my.aliexpress.ru/wishlist/wish_list_product_list.htm");

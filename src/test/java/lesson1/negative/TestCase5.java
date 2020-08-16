@@ -30,10 +30,10 @@ public class TestCase5 extends SeleniumBase {
         advertisement.closeAdvertisementLayer();
 
         // 3. Click on cart
-        driver.findElement(By.cssSelector(".right-cart-icon")).click();
+        element(".right-cart-icon").click();
 
         // 4. Click on authorization link
-        driver.findElement(By.cssSelector("[ae_button_type=\"login\"]")).click();
+        element("[ae_button_type=\"login\"]").click();
 
         try {
             // 1. Enter login
@@ -47,9 +47,9 @@ public class TestCase5 extends SeleniumBase {
         }
 
         // 5. Click enter button
-        driver.findElement(By.cssSelector(".fm-button")).click();
+        element(".fm-button").click();
 
         // 6. Click on authorization link
-        driver.findElement(By.cssSelector("[ae_button_type=\"login\"]")).click();
+        element("[ae_button_type=\"login\"]").click();
     }
 }

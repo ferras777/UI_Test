@@ -1,8 +1,12 @@
 package lesson1.positive;
 
 import lesson1.pages.Advertisement;
+import lesson1.pages.Authorization;
+import lesson1.pages.Tabs;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -10,6 +14,12 @@ import java.util.ArrayList;
 import static org.testng.Assert.assertEquals;
 
 public class TestCase9 extends SeleniumBase {
+    private Tabs tabs;
+
+    @BeforeMethod
+    public void beforeMethod() {
+        tabs = PageFactory.initElements(driver, Tabs.class);
+    }
 
     @Test
     public void testcase9() {
@@ -17,17 +27,14 @@ public class TestCase9 extends SeleniumBase {
         // Navigate aliexpress
         driver.navigate().to(SITE_URL);
 
-        // Click on link Phones and accessories
-        driver.findElement(By.linkText("Приложение")).click();
+        // Click on link app
+        element(".ng-item.ng-mobile").click();
 
         // Click on Google play button
-        driver.findElement(By.xpath("/html/body/div[5]/div/div[3]/a")).click();
-
-        // Gets array of tabs
-        ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+        element("a.android-link").click();
 
         // Switch to new tab
-        driver.switchTo().window(newTab.get(1));
+        tabs.switchToTab(1);
 
         String expectedTitle = "Приложения в Google Play – AliExpress онлайн магазин. Покупай со скидками!";
         String actualTitle = driver.getTitle();
@@ -39,6 +46,6 @@ public class TestCase9 extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        driver.switchTo().window(newTab.get(0));
+        tabs.switchToTab(0);
     }
 }

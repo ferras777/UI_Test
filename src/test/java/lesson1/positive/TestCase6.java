@@ -1,18 +1,17 @@
 package lesson1.positive;
 
-import lesson1.pages.Advertisement;
 import lesson1.pages.SearchBar;
+import lesson1.pages.Tabs;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-
 import static org.testng.Assert.assertEquals;
 
 public class TestCase6 extends SeleniumBase {
+    private Tabs tabs;
     private SearchBar searchBar;
 
 
@@ -20,6 +19,7 @@ public class TestCase6 extends SeleniumBase {
     public void beforeMethod() {
 
         searchBar = PageFactory.initElements(driver, SearchBar.class);
+        tabs = PageFactory.initElements(driver, Tabs.class);
     }
 
     @Test
@@ -34,26 +34,19 @@ public class TestCase6 extends SeleniumBase {
         searchBar.clickSearchButton();
 
         // Click on product
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]" +
-                "/ul/div[1]/li[1]/div/div[1]/div/a")).click();
-
-        // Get array of tabs
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        element("[product-index=\"0\"]").click();
 
         // Switch to second tab
-        driver.switchTo().window(tabs2.get(1));
+        tabs.switchToTab(1);
 
         // Get expected title of product
         String expectedTitle = driver.findElement(By.className("product-title-text")).getText();
 
         // Click on property
-        driver.findElement(By.xpath("/html/body/div[5]/div/div[2]/div/div[2]/div[7]/div/div/ul/li[1]")).click();
-
-        // Close cookies banner
-        driver.findElement(By.id("cookies-banner__container__close-btn")).click();
+        element(".sku-property-item:first-child").click();
 
         // Add product in cart
-        driver.findElement(By.cssSelector(".next-btn.next-large.next-btn-primary.addcart")).click();
+        element(".next-btn.next-large.next-btn-primary.addcart").click();
 
         // Navigate to cart
         driver.navigate().to("https://shoppingcart.aliexpress.ru/shopcart/shopcartDetail.htm");
@@ -67,6 +60,6 @@ public class TestCase6 extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        driver.switchTo().window(tabs2.get(0));
+        tabs.switchToTab(0);
     }
 }

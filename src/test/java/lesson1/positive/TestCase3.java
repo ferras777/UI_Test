@@ -16,7 +16,7 @@ public class TestCase3 extends SeleniumBase {
         driver.navigate().to(SITE_URL);
 
         // Click on link Phones and accessories
-        driver.findElement(By.linkText("Телефоны и аксессуары")).click();
+        element("[href*=\"cellphones-tele\"]").click();
 
         // Expected title
         String expectedTitle = "Купить Мобильные телефоны и аксессуары по низкой цене в интернет магазине АлиЭкспресс";
