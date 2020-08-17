@@ -36,8 +36,6 @@ public abstract class SeleniumBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
-
-        driver.navigate().to(SITE_URL);
     }
 
     @AfterClass
