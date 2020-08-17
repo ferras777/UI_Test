@@ -2,6 +2,7 @@ package lesson1.tests;
 
 import lesson1.pages.Advertisement;
 import lesson1.pages.Authorization;
+import lesson1.pages.Cart;
 import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
@@ -15,11 +16,13 @@ public class AuthorizationInEmptyCart extends SeleniumBase {
 
     private Authorization authorization;
     private Advertisement advertisement;
+    private Cart cart;
 
     @BeforeMethod
     public void beforeMethod() {
         authorization = PageFactory.initElements(driver, Authorization.class);
         advertisement = PageFactory.initElements(driver, Advertisement.class);
+        cart = PageFactory.initElements(driver, Cart.class);
     }
 
     @Test
@@ -34,15 +37,7 @@ public class AuthorizationInEmptyCart extends SeleniumBase {
         element(".right-cart-icon").click();
 
         // Delete item in cart
-        try {
-            element("[ae_button_type=\"remove\"]").click();
-
-            element("div.next-dialog-footer.next-align-left > button:first-child").click();
-
-        } catch (TimeoutException e) {
-            System.out.println("Cart is empty");
-        }
-
+        cart.deleteAllItemsInCart();
 
         // Click on authorization link
         element("[ae_button_type=\"login\"]").click();
