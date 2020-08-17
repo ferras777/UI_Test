@@ -48,7 +48,7 @@ public class AddProductInWishList extends SeleniumBase {
         element("[data-role=\"item-box\"]:first-child").click();
 
         // Get title of product
-        String expectedTitleOfProduct = driver.findElement(By.className("product-title-text")).getText();
+        String expectedTitleOfProduct = element(".product-title-text").getText();
 
         // Close cookies banner
         try {
@@ -67,8 +67,7 @@ public class AddProductInWishList extends SeleniumBase {
         driver.navigate().refresh();
 
         // Title of last added product
-        String actualTitleOfProduct = driver.findElement(By.xpath("/html/body/div[5]/div[2]" +
-                "/div[2]/ul/li/div[1]/h3/a")).getText();
+        String actualTitleOfProduct = element("li:nth-child(1) > div.detail > h3 > a").getText();
 
         assertEquals(actualTitleOfProduct, expectedTitleOfProduct);
     }
