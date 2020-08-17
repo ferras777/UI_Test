@@ -1,17 +1,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-
-<suite name="Suite1" verbose="1">
-    <test name="negative">
-        <packages>
-            <package name="lesson1.negative"/>
-        </packages>
+<suite name="SeleniumTest" verbose="1">
+    <test name="Aliexpress">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="lesson1.tests.AuthorizationInEmptyCart" />
+            <class name="lesson1.tests.AddProductInCart" />
+            <class name="lesson1.tests.AddProductInWishList" />
+            <class name="lesson1.tests.CheckLinkPhonesAndAccessories" />
+            <class name="lesson1.tests.CheckLinkToAppInGooglePlay" />
+            <class name="lesson1.tests.CheckPaginationInHistoryMessage" />
+            <class name="lesson1.tests.CheckReviewSend" />
+        </classes>
     </test>
-
-
-    <test name="positive">
-        <packages>
-            <package name="lesson1.positive"/>
-        </packages>
-    </test>
-
 </suite>
