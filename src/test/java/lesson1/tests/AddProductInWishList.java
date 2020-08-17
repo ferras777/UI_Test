@@ -5,9 +5,9 @@ import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -45,13 +45,17 @@ public class AddProductInWishList extends SeleniumBase {
         driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 
         // Click on product
-        element("#redesign-just-for-you > ul > li:nth-child(1) > a > div:nth-child(1) > div").click();
+        element("[data-role=\"item-box\"]:first-child").click();
 
         // Get title of product
         String expectedTitleOfProduct = driver.findElement(By.className("product-title-text")).getText();
 
         // Close cookies banner
-        element("#cookies-banner__container__close-btn").click();
+        try {
+            element("#cookies-banner__container__close-btn").click();
+        } catch (TimeoutException e) {
+            System.out.println("No cookies banner");
+        }
 
         // Click button add to wishlist
         element(".add-wishlist").click();
