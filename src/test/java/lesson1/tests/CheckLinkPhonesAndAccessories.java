@@ -1,4 +1,4 @@
-package lesson1.positive;
+package lesson1.tests;
 
 import lesson1.pages.Advertisement;
 import lesson1.test.SeleniumBase;
@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCase3 extends SeleniumBase {
+public class CheckLinkPhonesAndAccessories extends SeleniumBase {
 
     @Test
-    public void testcase3() {
+    public void checkLinkPhonesAndAccessories() {
 
         // Navigate aliexpress
         driver.navigate().to(SITE_URL);

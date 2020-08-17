@@ -1,4 +1,4 @@
-package lesson1.positive;
+package lesson1.tests;
 
 import lesson1.pages.Authorization;
 import lesson1.test.Credentials;
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCase7 extends SeleniumBase {
+public class AddProductInWishList extends SeleniumBase {
     private Authorization authorization;
 
 
@@ -25,7 +25,7 @@ public class TestCase7 extends SeleniumBase {
     }
 
     @Test
-    public void testCase7() {
+    public void addProductInWishList() {
         // Navigate aliexpress
         driver.navigate().to(SITE_URL);
 
@@ -49,6 +49,9 @@ public class TestCase7 extends SeleniumBase {
 
         // Get title of product
         String expectedTitleOfProduct = driver.findElement(By.className("product-title-text")).getText();
+
+        // Close cookies banner
+        element("#cookies-banner__container__close-btn").click();
 
         // Click button add to wishlist
         element(".add-wishlist").click();

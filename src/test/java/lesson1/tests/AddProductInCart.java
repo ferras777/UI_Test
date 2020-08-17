@@ -1,4 +1,4 @@
-package lesson1.positive;
+package lesson1.tests;
 
 import lesson1.pages.SearchBar;
 import lesson1.pages.Tabs;
@@ -10,20 +10,19 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCase6 extends SeleniumBase {
+public class AddProductInCart extends SeleniumBase {
     private Tabs tabs;
     private SearchBar searchBar;
 
 
     @BeforeMethod
     public void beforeMethod() {
-
         searchBar = PageFactory.initElements(driver, SearchBar.class);
         tabs = PageFactory.initElements(driver, Tabs.class);
     }
 
     @Test
-    public void testcase6() {
+    public void addProductInCart() {
         // Navigate aliexpress
         driver.navigate().to(SITE_URL);
 

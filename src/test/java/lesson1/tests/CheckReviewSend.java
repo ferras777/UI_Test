@@ -1,4 +1,4 @@
-package lesson1.negative;
+package lesson1.tests;
 
 import lesson1.pages.Advertisement;
 import lesson1.pages.Authorization;
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCase10 extends SeleniumBase {
+public class CheckReviewSend extends SeleniumBase {
     private Authorization authorization;
     private Advertisement advertisement;
     private Tabs tabs;
@@ -28,10 +28,8 @@ public class TestCase10 extends SeleniumBase {
         tabs = PageFactory.initElements(driver, Tabs.class);
     }
 
-    //TODO java code convention
-
     @Test
-    public void testCase10() {
+    public void checkReviewSend() {
         // Navigate site
         driver.navigate().to(SITE_URL);
 

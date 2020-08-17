@@ -1,4 +1,4 @@
-package lesson1.negative;
+package lesson1.tests;
 
 import lesson1.pages.Advertisement;
 import lesson1.pages.Authorization;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestCase5 extends SeleniumBase {
+public class AuthorizationInEmptyCart extends SeleniumBase {
 
     private Authorization authorization;
     private Advertisement advertisement;
@@ -22,7 +22,7 @@ public class TestCase5 extends SeleniumBase {
     }
 
     @Test
-    public void testcase5() {
+    public void authorizationInEmptyCart() {
         // 1. Navigate site
         driver.navigate().to(SITE_URL);
 

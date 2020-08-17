@@ -1,4 +1,4 @@
-package lesson1.positive;
+package lesson1.tests;
 
 import lesson1.pages.Advertisement;
 import lesson1.pages.Authorization;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCase9 extends SeleniumBase {
+public class CheckLinkToAppInGooglePlay extends SeleniumBase {
     private Tabs tabs;
 
     @BeforeMethod
@@ -22,7 +22,7 @@ public class TestCase9 extends SeleniumBase {
     }
 
     @Test
-    public void testcase9() {
+    public void checkLinkToAppInGooglePlay() {
 
         // Navigate aliexpress
         driver.navigate().to(SITE_URL);

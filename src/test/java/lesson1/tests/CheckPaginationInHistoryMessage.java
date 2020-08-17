@@ -1,4 +1,4 @@
-package lesson1.negative;
+package lesson1.tests;
 
 import lesson1.pages.Authorization;
 import lesson1.pages.Tabs;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 import static org.testng.Assert.*;
 
-public class TestCase1 extends SeleniumBase {
+public class CheckPaginationInHistoryMessage extends SeleniumBase {
     private Authorization authorization;
     private Tabs tabs;
 
@@ -24,11 +24,8 @@ public class TestCase1 extends SeleniumBase {
         tabs = PageFactory.initElements(driver, Tabs.class);
     }
 
-    //TODO change naming
-    //TODO use only css-selectors
-
     @Test
-    public void testCase1() {
+    public void checkPaginationInHistoryMessage() {
 
         // Navigate site
         driver.navigate().to(SITE_URL);
