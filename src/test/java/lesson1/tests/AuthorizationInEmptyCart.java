@@ -6,6 +6,7 @@ import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,23 +24,34 @@ public class AuthorizationInEmptyCart extends SeleniumBase {
 
     @Test
     public void authorizationInEmptyCart() {
-        // 1. Navigate site
+        // Navigate site
         driver.navigate().to(SITE_URL);
 
-        // 2. Close advertisement
+        // Close advertisement
         advertisement.closeAdvertisementLayer();
 
-        // 3. Click on cart
+        // Click on cart
         element(".right-cart-icon").click();
 
-        // 4. Click on authorization link
+        // Delete item in cart
+        try {
+            element("[ae_button_type=\"remove\"]").click();
+
+            element("div.next-dialog-footer.next-align-left > button:first-child").click();
+
+        } catch (TimeoutException e) {
+            System.out.println("Cart is empty");
+        }
+
+
+        // Click on authorization link
         element("[ae_button_type=\"login\"]").click();
 
         try {
-            // 1. Enter login
+            // Enter login
             authorization.fillLoginField(Credentials.TEST_ACCOUNT_NEW_USER);
 
-            // 2. Enter password
+            // Enter password
             authorization.fillPasswordField(Credentials.TEST_ACCOUNT_NEW_USER);
 
         } catch (NoSuchElementException e) {
