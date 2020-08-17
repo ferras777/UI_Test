@@ -9,13 +9,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 import java.util.concurrent.TimeUnit;
-
-//TODO move class to "src/main" folder
-//TODO base class should be universal
 
 public abstract class SeleniumBase {
     public WebDriver driver;
@@ -24,8 +23,8 @@ public abstract class SeleniumBase {
     public String SITE_URL = "https://aliexpress.ru/";
 
 
-    @BeforeSuite
-    public void beforeSuite() {
+    @BeforeClass
+    public void BeforeClass() {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
@@ -37,10 +36,12 @@ public abstract class SeleniumBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 30);
+
+        driver.navigate().to(SITE_URL);
     }
 
-    @AfterMethod
-    public void afterMethod() {
+    @AfterClass
+    public void afterClass() {
         driver.close();
     }
 
