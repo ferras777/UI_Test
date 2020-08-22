@@ -1,4 +1,4 @@
-package lesson1.pages;
+package lesson1.pages.seleniumPages;
 
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.WebDriver;
@@ -21,5 +21,7 @@ public class SearchBar extends SeleniumBase {
         searchField.sendKeys(value);
     }
 
-    public void clickSearchButton() { searchButton.click();}
+    public void clickSearchButton() {
+        searchButton.click();
+    }
 }

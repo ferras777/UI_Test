@@ -1,31 +1,27 @@
-package lesson1.tests;
+package lesson1.tests.selenium;
 
-import lesson1.pages.Advertisement;
-import lesson1.pages.Authorization;
-import lesson1.pages.Tabs;
-import lesson1.test.Credentials;
+import lesson1.pages.seleniumPages.Advertisement;
+import lesson1.pages.seleniumPages.Authorization;
+import lesson1.pages.seleniumPages.Utils;
 import lesson1.test.SeleniumBase;
+import lesson1.test.enums.Credentials;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
 public class CheckReviewSend extends SeleniumBase {
     private Authorization authorization;
     private Advertisement advertisement;
-    private Tabs tabs;
+    private Utils utils;
 
     @BeforeMethod
     public void beforeMethod() {
         authorization = PageFactory.initElements(driver, Authorization.class);
         advertisement = PageFactory.initElements(driver, Advertisement.class);
-        tabs = PageFactory.initElements(driver, Tabs.class);
+        utils = PageFactory.initElements(driver, Utils.class);
     }
 
     @Test
@@ -49,7 +45,7 @@ public class CheckReviewSend extends SeleniumBase {
         element(".ui-fixed-panel-unit.ui-fixed-panel-survey").click();
 
         // Switch to second tab
-        tabs.switchToTab(1);
+        utils.switchToTab(1);
 
         // Click button send
         element(".ui-button.ui-button-primary.ui-button-medium.j-submit-survey-form").click();
@@ -64,6 +60,6 @@ public class CheckReviewSend extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        tabs.switchToTab(0);
+        utils.switchToTab(0);
     }
 }

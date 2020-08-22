@@ -1,7 +1,7 @@
-package lesson1.pages;
+package lesson1.pages.seleniumPages;
 
-import lesson1.test.Credentials;
 import lesson1.test.SeleniumBase;
+import lesson1.test.enums.Credentials;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
@@ -44,9 +44,7 @@ public class Authorization extends SeleniumBase {
             fillPasswordField(Credentials.TEST_ACCOUNT_NEW_USER);
             // 6. Click submit button
             driver.findElement(By.cssSelector(".password-login")).click();
-        } catch (NoSuchElementException e) {
-            System.out.println("Registration not required");
-        } catch (ElementNotInteractableException e) {
+        } catch (NoSuchElementException | ElementNotInteractableException e) {
             System.out.println("Registration not required");
         }
     }

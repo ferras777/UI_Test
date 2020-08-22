@@ -1,4 +1,4 @@
-package lesson1.pages;
+package lesson1.pages.seleniumPages;
 
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.NoSuchElementException;

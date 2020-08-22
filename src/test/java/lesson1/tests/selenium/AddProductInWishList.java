@@ -1,8 +1,8 @@
-package lesson1.tests;
+package lesson1.tests.selenium;
 
-import lesson1.pages.Authorization;
-import lesson1.test.Credentials;
+import lesson1.pages.seleniumPages.Authorization;
 import lesson1.test.SeleniumBase;
+import lesson1.test.enums.Credentials;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;

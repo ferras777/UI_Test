@@ -1,24 +1,19 @@
-package lesson1.tests;
+package lesson1.tests.selenium;
 
-import lesson1.pages.Advertisement;
-import lesson1.pages.Authorization;
-import lesson1.pages.Tabs;
+import lesson1.pages.seleniumPages.Utils;
 import lesson1.test.SeleniumBase;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-
 import static org.testng.Assert.assertEquals;
 
 public class CheckLinkToAppInGooglePlay extends SeleniumBase {
-    private Tabs tabs;
+    private Utils utils;
 
     @BeforeMethod
     public void beforeMethod() {
-        tabs = PageFactory.initElements(driver, Tabs.class);
+        utils = PageFactory.initElements(driver, Utils.class);
     }
 
     @Test
@@ -34,7 +29,7 @@ public class CheckLinkToAppInGooglePlay extends SeleniumBase {
         element("a.android-link").click();
 
         // Switch to new tab
-        tabs.switchToTab(1);
+        utils.switchToTab(1);
 
         String expectedTitle = "Приложения в Google Play – AliExpress онлайн магазин. Покупай со скидками!";
         String actualTitle = driver.getTitle();
@@ -46,6 +41,6 @@ public class CheckLinkToAppInGooglePlay extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        tabs.switchToTab(0);
+        utils.switchToTab(0);
     }
 }

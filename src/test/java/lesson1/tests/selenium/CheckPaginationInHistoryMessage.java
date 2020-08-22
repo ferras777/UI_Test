@@ -1,27 +1,24 @@
-package lesson1.tests;
+package lesson1.tests.selenium;
 
-import lesson1.pages.Authorization;
-import lesson1.pages.Tabs;
-import lesson1.test.Credentials;
+import lesson1.pages.seleniumPages.Authorization;
+import lesson1.pages.seleniumPages.Utils;
 import lesson1.test.SeleniumBase;
+import lesson1.test.enums.Credentials;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class CheckPaginationInHistoryMessage extends SeleniumBase {
     private Authorization authorization;
-    private Tabs tabs;
+    private Utils utils;
 
     @BeforeMethod
     public void beforeMethod() {
         authorization = PageFactory.initElements(driver, Authorization.class);
-        tabs = PageFactory.initElements(driver, Tabs.class);
+        utils = PageFactory.initElements(driver, Utils.class);
     }
 
     @Test
@@ -43,7 +40,7 @@ public class CheckPaginationInHistoryMessage extends SeleniumBase {
         element("a[href*=\"buyerMsgList.htm\"]").click();
 
         // Switch to second tab
-        tabs.switchToTab(1);
+        utils.switchToTab(1);
 
         // Enter page number 9999.
         element("[data-role=\"input\"]").sendKeys("9999");
@@ -61,6 +58,6 @@ public class CheckPaginationInHistoryMessage extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        tabs.switchToTab(0);
+        utils.switchToTab(0);
     }
 }

@@ -1,13 +1,11 @@
-package lesson1.tests;
+package lesson1.tests.selenium;
 
-import lesson1.pages.Advertisement;
-import lesson1.pages.Authorization;
-import lesson1.pages.Cart;
-import lesson1.test.Credentials;
+import lesson1.pages.seleniumPages.Advertisement;
+import lesson1.pages.seleniumPages.Authorization;
+import lesson1.pages.seleniumPages.Cart;
 import lesson1.test.SeleniumBase;
-import org.openqa.selenium.By;
+import lesson1.test.enums.Credentials;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

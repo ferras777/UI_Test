@@ -1,8 +1,6 @@
-package lesson1.tests;
+package lesson1.tests.selenium;
 
-import lesson1.pages.Advertisement;
 import lesson1.test.SeleniumBase;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;

@@ -1,7 +1,7 @@
-package lesson1.tests;
+package lesson1.tests.selenium;
 
-import lesson1.pages.SearchBar;
-import lesson1.pages.Tabs;
+import lesson1.pages.seleniumPages.SearchBar;
+import lesson1.pages.seleniumPages.Utils;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
@@ -11,14 +11,14 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class AddProductInCart extends SeleniumBase {
-    private Tabs tabs;
+    private Utils utils;
     private SearchBar searchBar;
 
 
     @BeforeMethod
     public void beforeMethod() {
         searchBar = PageFactory.initElements(driver, SearchBar.class);
-        tabs = PageFactory.initElements(driver, Tabs.class);
+        utils = PageFactory.initElements(driver, Utils.class);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class AddProductInCart extends SeleniumBase {
         element("[product-index=\"0\"]").click();
 
         // Switch to second tab
-        tabs.switchToTab(1);
+        utils.switchToTab(1);
 
         // Get expected title of product
         String expectedTitle = driver.findElement(By.className("product-title-text")).getText();
@@ -59,6 +59,6 @@ public class AddProductInCart extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        tabs.switchToTab(0);
+        utils.switchToTab(0);
     }
 }
