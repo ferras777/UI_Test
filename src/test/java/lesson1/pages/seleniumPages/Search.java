@@ -16,7 +16,6 @@ public class Search extends SeleniumBase {
     @FindBy(css = "[product-index=\"0\"]")
     private WebElement product;
 
-
     public Search(WebDriver driver) {
         SeleniumBase.driver = driver;
     }
@@ -32,6 +31,4 @@ public class Search extends SeleniumBase {
     public void clickOnProduct() {
         product.click();
     }
-
-
 }

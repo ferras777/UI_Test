@@ -16,7 +16,6 @@ public abstract class SeleniumBase {
 
     public String SITE_URL = "https://aliexpress.ru/";
 
-
     @BeforeClass
     public void BeforeClass() {
         WebDriverManager.chromedriver().setup();
@@ -36,5 +35,4 @@ public abstract class SeleniumBase {
     public void afterClass() {
         driver.close();
     }
-
 }

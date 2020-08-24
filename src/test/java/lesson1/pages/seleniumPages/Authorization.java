@@ -22,7 +22,6 @@ public class Authorization extends SeleniumBase {
         SeleniumBase.driver = driver;
     }
 
-
     public void fillLoginField(Credentials credentials) {
         loginField.clear();
         loginField.sendKeys(credentials.LOGIN);

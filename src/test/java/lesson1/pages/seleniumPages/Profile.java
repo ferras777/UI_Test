@@ -16,5 +16,4 @@ public class Profile {
     public Profile(WebDriver driver) {
         SeleniumBase.driver = driver;
     }
-
 }

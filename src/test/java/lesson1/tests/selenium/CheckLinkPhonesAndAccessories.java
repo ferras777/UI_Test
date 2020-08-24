@@ -17,7 +17,6 @@ public class CheckLinkPhonesAndAccessories extends SeleniumBase {
         mainPage = PageFactory.initElements(driver, MainPage.class);
     }
 
-
     @Test
     public void checkLinkPhonesAndAccessories() {
 

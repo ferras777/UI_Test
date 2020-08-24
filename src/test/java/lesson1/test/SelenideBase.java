@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeClass;
 public abstract class SelenideBase {
     public String SITE_URL = "https://aliexpress.ru/";
 
-
     @BeforeClass
     public void beforeClass() {
         WebDriverManager.chromedriver().setup();

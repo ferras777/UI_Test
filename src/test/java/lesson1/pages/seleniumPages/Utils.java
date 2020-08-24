@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public class Utils extends SeleniumBase {
 
-
     public Utils(WebDriver driver) {
         SeleniumBase.driver = driver;
     }

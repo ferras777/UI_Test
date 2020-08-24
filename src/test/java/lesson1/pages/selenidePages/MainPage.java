@@ -9,6 +9,4 @@ public class MainPage {
     public ElementsCollection getBannersCollection() {
         return $$(".ui-banner-slider-nav > span");
     }
-
-
 }

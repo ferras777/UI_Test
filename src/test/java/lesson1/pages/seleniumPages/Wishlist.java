@@ -17,6 +17,4 @@ public class Wishlist extends SeleniumBase {
     public String getLastAddedProductTitle() {
         return lastAddedProductTitle.getText();
     }
-
-
 }
