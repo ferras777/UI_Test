@@ -15,8 +15,11 @@ public class Authorization extends SeleniumBase {
     @FindBy(css = "#fm-login-password")
     private WebElement passwordField;
 
+    @FindBy(css = ".fm-button")
+    private WebElement enterButton;
+
     public Authorization(WebDriver driver) {
-        this.driver = driver;
+        SeleniumBase.driver = driver;
     }
 
 
@@ -47,5 +50,9 @@ public class Authorization extends SeleniumBase {
         } catch (NoSuchElementException | ElementNotInteractableException e) {
             System.out.println("Registration not required");
         }
+    }
+
+    public void clickOnEnterButton() {
+        enterButton.click();
     }
 }

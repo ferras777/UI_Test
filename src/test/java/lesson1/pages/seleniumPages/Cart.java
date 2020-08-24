@@ -17,8 +17,14 @@ public class Cart extends SeleniumBase {
     @FindBy(css = "div.next-dialog-footer.next-align-left > button:first-child")
     private WebElement okButton;
 
+    @FindBy(css = ".product-name-link")
+    private WebElement productTitle;
+
+    @FindBy(css = "[ae_button_type=\"login\"]")
+    private WebElement authenticationLink;
+
     public Cart(WebDriver driver) {
-        this.driver = driver;
+        SeleniumBase.driver = driver;
     }
 
     public void deleteAllItemsInCart() {
@@ -34,5 +40,13 @@ public class Cart extends SeleniumBase {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getProductTitle() {
+        return productTitle.getText();
+    }
+
+    public void clickOnAuthorizationLink() {
+        authenticationLink.click();
     }
 }

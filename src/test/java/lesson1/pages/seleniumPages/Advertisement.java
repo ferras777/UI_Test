@@ -12,7 +12,7 @@ public class Advertisement extends SeleniumBase {
     private WebElement advertisementLayer;
 
     public Advertisement(WebDriver driver) {
-        this.driver = driver;
+        SeleniumBase.driver = driver;
     }
 
     public void closeAdvertisementLayer() {

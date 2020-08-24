@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SearchBar extends SeleniumBase {
+public class Search extends SeleniumBase {
 
     @FindBy(css = "#search-key")
     private WebElement searchField;
@@ -13,8 +13,12 @@ public class SearchBar extends SeleniumBase {
     @FindBy(css = ".search-button")
     private WebElement searchButton;
 
-    public SearchBar(WebDriver driver) {
-        this.driver = driver;
+    @FindBy(css = "[product-index=\"0\"]")
+    private WebElement product;
+
+
+    public Search(WebDriver driver) {
+        SeleniumBase.driver = driver;
     }
 
     public void fillSearchField(String value) {
@@ -24,4 +28,10 @@ public class SearchBar extends SeleniumBase {
     public void clickSearchButton() {
         searchButton.click();
     }
+
+    public void clickOnProduct() {
+        product.click();
+    }
+
+
 }
