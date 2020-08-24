@@ -26,7 +26,7 @@ public class PriceFilterTest extends SelenideBase {
         int productPrice;
         boolean priceCheck;
 
-        search.searchProduct("толстовки");
+        search.searchProduct("перчатки");
 
         search.setMinAndMaxPriceOfProduct(min, max);
 
@@ -39,7 +39,7 @@ public class PriceFilterTest extends SelenideBase {
         //Get product price
         productPrice = productPage.getProductPrice();
 
-        // Check if product price in range
+        // Check if product price in range min and max values
         priceCheck = ((min - 1 <= productPrice) && (productPrice <= max + 1));
         assertTrue(priceCheck);
     }

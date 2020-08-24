@@ -18,7 +18,6 @@ public class CountrySelectIsChinaTest extends SelenideBase {
 
     @Test
     public void testCountrySelectIsChina() {
-
         search.searchProduct("перчатки");
 
         search.setShipFrom("china");
