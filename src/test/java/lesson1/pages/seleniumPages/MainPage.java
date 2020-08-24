@@ -17,6 +17,8 @@ public class MainPage extends SeleniumBase {
     public WebElement messageButton;
     @FindBy(css = ".aliexpress-icon.i-aliexpress-icon")
     public WebElement profileButton;
+    @FindBy(css = ".categories-content-title > span:first-child")
+    public WebElement categoriesFolder;
     @FindBy(css = "#fm-login-id")
     private WebElement loginField;
     @FindBy(css = "#fm-login-password")
