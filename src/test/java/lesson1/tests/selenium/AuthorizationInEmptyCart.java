@@ -3,6 +3,7 @@ package lesson1.tests.selenium;
 import lesson1.pages.seleniumPages.Advertisement;
 import lesson1.pages.seleniumPages.Authorization;
 import lesson1.pages.seleniumPages.Cart;
+import lesson1.pages.seleniumPages.MainPage;
 import lesson1.test.SeleniumBase;
 import lesson1.test.enums.Credentials;
 import org.openqa.selenium.NoSuchElementException;
@@ -15,12 +16,14 @@ public class AuthorizationInEmptyCart extends SeleniumBase {
     private Authorization authorization;
     private Advertisement advertisement;
     private Cart cart;
+    private MainPage mainPage;
 
     @BeforeMethod
     public void beforeMethod() {
         authorization = PageFactory.initElements(driver, Authorization.class);
         advertisement = PageFactory.initElements(driver, Advertisement.class);
         cart = PageFactory.initElements(driver, Cart.class);
+        mainPage = PageFactory.initElements(driver, MainPage.class);
     }
 
     @Test
@@ -32,13 +35,13 @@ public class AuthorizationInEmptyCart extends SeleniumBase {
         advertisement.closeAdvertisementLayer();
 
         // Click on cart
-        element(".right-cart-icon").click();
+        mainPage.clickOnCartButton();
 
         // Delete item in cart
         cart.deleteAllItemsInCart();
 
         // Click on authorization link
-        element("[ae_button_type=\"login\"]").click();
+        cart.clickOnAuthorizationLink();
 
         try {
             // Enter login
@@ -52,9 +55,9 @@ public class AuthorizationInEmptyCart extends SeleniumBase {
         }
 
         // 5. Click enter button
-        element(".fm-button").click();
+        authorization.clickOnEnterButton();
 
         // 6. Click on authorization link
-        element("[ae_button_type=\"login\"]").click();
+        cart.clickOnAuthorizationLink();
     }
 }

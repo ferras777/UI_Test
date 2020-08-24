@@ -1,73 +1,65 @@
 package lesson1.tests.selenium;
 
-import lesson1.pages.seleniumPages.Authorization;
+import lesson1.pages.seleniumPages.MainPage;
+import lesson1.pages.seleniumPages.ProductCard;
+import lesson1.pages.seleniumPages.Wishlist;
 import lesson1.test.SeleniumBase;
 import lesson1.test.enums.Credentials;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
+import static lesson1.test.enums.Urls.SITE;
+import static lesson1.test.enums.Urls.WISHLIST;
 import static org.testng.Assert.assertEquals;
 
 public class AddProductInWishList extends SeleniumBase {
-    private Authorization authorization;
+    private MainPage mainPage;
+    private ProductCard productCard;
+    private Wishlist wishlist;
 
 
     @BeforeMethod
     public void beforeMethod() {
-        authorization = PageFactory.initElements(driver, Authorization.class);
+        mainPage = PageFactory.initElements(driver, MainPage.class);
+        productCard = PageFactory.initElements(driver, ProductCard.class);
+        wishlist = PageFactory.initElements(driver, Wishlist.class);
     }
 
     @Test
     public void addProductInWishList() {
         // Navigate aliexpress
-        driver.navigate().to(SITE_URL);
+        driver.navigate().to(SITE.url);
 
         // Try enter in acc
-        authorization.fromMainPage(Credentials.TEST_ACCOUNT_NEW_USER);
+        mainPage.authorization(Credentials.TEST_ACCOUNT_NEW_USER);
 
         // Switch to main page
         driver.switchTo().defaultContent();
 
         // Scroll down to load products
-        waitVisibilityOfElement(".android-link");
-        WebElement footer = driver.findElement(By.cssSelector(".android-link"));
-
-        JavascriptExecutor je = (JavascriptExecutor) driver;
-
-        je.executeScript("arguments[0].scrollIntoView(true);", footer);
-        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+        mainPage.scrollDownToLoadProducts();
 
         // Click on product
-        element("[data-role=\"item-box\"]:first-child").click();
+        mainPage.clickOnFirstProduct();
 
         // Get title of product
-        String expectedTitleOfProduct = element(".product-title-text").getText();
+        String expectedTitleOfProduct = productCard.getProductTitle();
 
         // Close cookies banner
-        try {
-            element("#cookies-banner__container__close-btn").click();
-        } catch (TimeoutException e) {
-            System.out.println("No cookies banner");
-        }
+        productCard.closeCookiesBanner();
 
         // Click button add to wishlist
-        element(".add-wishlist").click();
+        productCard.addToWishlist();
 
         // Navigate to wishlist
-        driver.navigate().to("https://my.aliexpress.ru/wishlist/wish_list_product_list.htm");
+        driver.navigate().to(WISHLIST.url);
 
         // Refresh page for load products
         driver.navigate().refresh();
 
         // Title of last added product
-        String actualTitleOfProduct = element("li:nth-child(1) > div.detail > h3 > a").getText();
+        String actualTitleOfProduct = wishlist.getLastAddedProductTitle();
 
         assertEquals(actualTitleOfProduct, expectedTitleOfProduct);
     }

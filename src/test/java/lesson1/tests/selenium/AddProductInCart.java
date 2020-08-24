@@ -1,57 +1,62 @@
 package lesson1.tests.selenium;
 
-import lesson1.pages.seleniumPages.SearchBar;
-import lesson1.pages.seleniumPages.Utils;
+import lesson1.pages.seleniumPages.Cart;
+import lesson1.pages.seleniumPages.ProductCard;
+import lesson1.pages.seleniumPages.Search;
 import lesson1.test.SeleniumBase;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static lesson1.pages.seleniumPages.Utils.switchToTab;
+import static lesson1.test.enums.Urls.CART;
+import static lesson1.test.enums.Urls.SITE;
 import static org.testng.Assert.assertEquals;
 
 public class AddProductInCart extends SeleniumBase {
-    private Utils utils;
-    private SearchBar searchBar;
+    private Search search;
+    private Cart cart;
+    private ProductCard productCard;
 
 
     @BeforeMethod
     public void beforeMethod() {
-        searchBar = PageFactory.initElements(driver, SearchBar.class);
-        utils = PageFactory.initElements(driver, Utils.class);
+        search = PageFactory.initElements(driver, Search.class);
+        cart = PageFactory.initElements(driver, Cart.class);
+        productCard = PageFactory.initElements(driver, ProductCard.class);
     }
 
     @Test
     public void addProductInCart() {
         // Navigate aliexpress
-        driver.navigate().to(SITE_URL);
+        driver.navigate().to(SITE.url);
 
         // Add text in search box
-        searchBar.fillSearchField("кошельки кожаные");
+        search.fillSearchField("кошельки кожаные");
 
         // Click search button
-        searchBar.clickSearchButton();
+        search.clickSearchButton();
 
         // Click on product
-        element("[product-index=\"0\"]").click();
+        search.clickOnProduct();
 
         // Switch to second tab
-        utils.switchToTab(1);
+        switchToTab(1);
 
         // Get expected title of product
-        String expectedTitle = driver.findElement(By.className("product-title-text")).getText();
+        String expectedTitle = productCard.getProductTitle();
 
         // Click on property
-        element(".sku-property-item:first-child").click();
+        productCard.selectFirstProperty();
 
         // Add product in cart
-        element(".next-btn.next-large.next-btn-primary.addcart").click();
+        productCard.addToCart();
 
         // Navigate to cart
-        driver.navigate().to("https://shoppingcart.aliexpress.ru/shopcart/shopcartDetail.htm");
+        driver.navigate().to(CART.url);
 
         // Get actual title of product in cart
-        String actualTitle = driver.findElement(By.className("product-name-link")).getText();
+        String actualTitle = cart.getProductTitle();
 
         assertEquals(actualTitle, expectedTitle);
 
@@ -59,6 +64,6 @@ public class AddProductInCart extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        utils.switchToTab(0);
+        switchToTab(0);
     }
 }
