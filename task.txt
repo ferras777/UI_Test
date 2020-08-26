@@ -3,3 +3,11 @@
 3. Add webdrivermanager dependency and implement it in tests.
 4. Split tests to test suits by testng.xml files.
 5. Rewrite test cases and bugs in https://docs.google.com/document/d/1gqTqPFlidmlDAtHuXm0M6QilkK4TJcBamaxgFH83o0s/edit?usp=sharing
+
+
+08262020
+
+1. Fix code structure - move classes and methods to the corresponding packages
+2. Delete Thread.sleep
+3. Write cucumber tests
+4. Connect allure and site
