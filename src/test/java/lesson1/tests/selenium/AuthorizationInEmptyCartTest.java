@@ -8,10 +8,11 @@ import lesson1.test.SeleniumBase;
 import lesson1.test.enums.Credentials;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AuthorizationInEmptyCart extends SeleniumBase {
+public class AuthorizationInEmptyCartTest extends SeleniumBase {
 
     private Authorization authorization;
     private Advertisement advertisement;
@@ -24,6 +25,11 @@ public class AuthorizationInEmptyCart extends SeleniumBase {
         advertisement = PageFactory.initElements(driver, Advertisement.class);
         cart = PageFactory.initElements(driver, Cart.class);
         mainPage = PageFactory.initElements(driver, MainPage.class);
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        driver.close();
     }
 
     @Test

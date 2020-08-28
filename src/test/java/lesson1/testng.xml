@@ -3,33 +3,33 @@
     <test name="Cart">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="lesson1.tests.selenium.AuthorizationInEmptyCart"/>
-            <class name="lesson1.tests.selenium.AddProductInCart"/>
+            <class name="lesson1.tests.selenium.AuthorizationInEmptyCartTest"/>
+            <class name="lesson1.tests.selenium.AddProductInCartTest"/>
         </classes>
     </test>
     <test name="Wishlist">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="lesson1.tests.selenium.AddProductInWishList"/>
+            <class name="lesson1.tests.selenium.AddProductInWishListTest"/>
         </classes>
     </test>
     <test name="Links">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="lesson1.tests.selenium.CheckLinkPhonesAndAccessories"/>
-            <class name="lesson1.tests.selenium.CheckLinkToAppInGooglePlay"/>
+            <class name="lesson1.tests.selenium.CheckLinkPhonesAndAccessoriesTest"/>
+            <class name="lesson1.tests.selenium.CheckLinkToAppInGooglePlayTest"/>
         </classes>
     </test>
     <test name="Messages">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="lesson1.tests.selenium.CheckPaginationInHistoryMessage"/>
+            <class name="lesson1.tests.selenium.CheckPaginationInHistoryMessageTest"/>
         </classes>
     </test>
     <test name="Review">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="lesson1.tests.selenium.CheckReviewSend"/>
+            <class name="lesson1.tests.selenium.CheckReviewSendTest"/>
         </classes>
     </test>
 </suite>

@@ -5,6 +5,7 @@ import lesson1.pages.seleniumPages.ProductCard;
 import lesson1.pages.seleniumPages.Search;
 import lesson1.test.SeleniumBase;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,7 @@ import static lesson1.test.enums.Urls.CART;
 import static lesson1.test.enums.Urls.SITE;
 import static org.testng.Assert.assertEquals;
 
-public class AddProductInCart extends SeleniumBase {
+public class AddProductInCartTest extends SeleniumBase {
     private Search search;
     private Cart cart;
     private ProductCard productCard;
@@ -24,6 +25,11 @@ public class AddProductInCart extends SeleniumBase {
         search = PageFactory.initElements(driver, Search.class);
         cart = PageFactory.initElements(driver, Cart.class);
         productCard = PageFactory.initElements(driver, ProductCard.class);
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        driver.close();
     }
 
     @Test

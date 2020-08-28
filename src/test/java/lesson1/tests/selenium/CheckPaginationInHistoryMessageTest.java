@@ -5,13 +5,14 @@ import lesson1.pages.seleniumPages.Messages;
 import lesson1.test.SeleniumBase;
 import lesson1.test.enums.Credentials;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static lesson1.pages.seleniumPages.Utils.switchToTab;
 import static org.testng.Assert.assertEquals;
 
-public class CheckPaginationInHistoryMessage extends SeleniumBase {
+public class CheckPaginationInHistoryMessageTest extends SeleniumBase {
     private MainPage mainPage;
     private Messages messages;
 
@@ -21,13 +22,18 @@ public class CheckPaginationInHistoryMessage extends SeleniumBase {
         messages = PageFactory.initElements(driver, Messages.class);
     }
 
+    @AfterMethod
+    public void afterMethod() {
+        driver.close();
+    }
+
     @Test
     public void checkPaginationInHistoryMessage() {
 
         // Navigate site
         driver.navigate().to(SITE_URL);
 
-        // Try enter in acc
+        // Authorization
         mainPage.authorization(Credentials.TEST_ACCOUNT_NEW_USER);
 
         // Switch to main page

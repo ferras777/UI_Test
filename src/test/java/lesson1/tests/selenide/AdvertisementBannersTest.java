@@ -4,9 +4,11 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import lesson1.pages.selenidePages.MainPage;
 import lesson1.test.SelenideBase;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.Selenide.open;
 import static org.testng.Assert.assertTrue;
 
@@ -16,10 +18,17 @@ public class AdvertisementBannersTest extends SelenideBase {
     @BeforeMethod
     public void beforeMethod() {
         open("/");
+
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        closeWindow();
     }
 
     @Test
     public void testAdvertisementBanners() {
+        mainPage.closeAdvertisementPopUp();
         // For each banner, after click, checks if it's have class current
         for (SelenideElement banner : mainPage.getBannersCollection()) {
             banner.click();

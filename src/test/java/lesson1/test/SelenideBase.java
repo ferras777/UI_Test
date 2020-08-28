@@ -2,7 +2,6 @@ package lesson1.test;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 
@@ -17,7 +16,7 @@ public abstract class SelenideBase {
         Configuration.startMaximized = true;
 
 
-        Configuration.browserCapabilities = new MutableCapabilities(profileForAuthorizationChrome());
+//        Configuration.browserCapabilities = new MutableCapabilities(profileForAuthorizationChrome());
     }
 
     public ChromeOptions profileForAuthorizationChrome() {

@@ -7,14 +7,15 @@ import lesson1.test.SeleniumBase;
 import lesson1.test.enums.Credentials;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static java.lang.Thread.sleep;
 import static lesson1.pages.seleniumPages.Utils.switchToTab;
-import static org.testng.Assert.assertNotEquals;
+import static org.testng.Assert.assertEquals;
 
-public class CheckReviewSend extends SeleniumBase {
+public class CheckReviewSendTest extends SeleniumBase {
     private Advertisement advertisement;
     private MainPage mainPage;
     private Profile profile;
@@ -24,6 +25,11 @@ public class CheckReviewSend extends SeleniumBase {
         advertisement = PageFactory.initElements(driver, Advertisement.class);
         mainPage = PageFactory.initElements(driver, MainPage.class);
         profile = PageFactory.initElements(driver, Profile.class);
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        driver.close();
     }
 
     @Test
@@ -57,7 +63,7 @@ public class CheckReviewSend extends SeleniumBase {
         String expected = "{\"ec\":8,\"em\":\"forbidden\",\"data\":{}}";
 
         // Checks actual and expected
-        assertNotEquals(actual, expected);
+        assertEquals(actual, expected);
 
         // Closed second tab
         driver.close();

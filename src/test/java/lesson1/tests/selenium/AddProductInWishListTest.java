@@ -6,6 +6,7 @@ import lesson1.pages.seleniumPages.Wishlist;
 import lesson1.test.SeleniumBase;
 import lesson1.test.enums.Credentials;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,7 @@ import static lesson1.test.enums.Urls.SITE;
 import static lesson1.test.enums.Urls.WISHLIST;
 import static org.testng.Assert.assertEquals;
 
-public class AddProductInWishList extends SeleniumBase {
+public class AddProductInWishListTest extends SeleniumBase {
     private MainPage mainPage;
     private ProductCard productCard;
     private Wishlist wishlist;
@@ -24,6 +25,11 @@ public class AddProductInWishList extends SeleniumBase {
         mainPage = PageFactory.initElements(driver, MainPage.class);
         productCard = PageFactory.initElements(driver, ProductCard.class);
         wishlist = PageFactory.initElements(driver, Wishlist.class);
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        driver.close();
     }
 
     @Test
