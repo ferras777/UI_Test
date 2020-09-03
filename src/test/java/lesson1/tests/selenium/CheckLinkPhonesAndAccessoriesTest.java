@@ -27,7 +27,7 @@ public class CheckLinkPhonesAndAccessoriesTest extends SeleniumBase {
     public void checkLinkPhonesAndAccessories() {
 
         // Navigate aliexpress
-        driver.navigate().to(SITE.url);
+        driver.navigate().to(SITE.getUrl());
 
         //Click on categories
         mainPage.categoriesFolder.click();

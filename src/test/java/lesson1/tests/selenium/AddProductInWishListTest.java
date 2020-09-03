@@ -35,7 +35,7 @@ public class AddProductInWishListTest extends SeleniumBase {
     @Test
     public void addProductInWishList() {
         // Navigate aliexpress
-        driver.navigate().to(SITE.url);
+        driver.navigate().to(SITE.getUrl());
 
         // Try enter in acc
         mainPage.authorization(Credentials.TEST_ACCOUNT_NEW_USER);
@@ -59,7 +59,7 @@ public class AddProductInWishListTest extends SeleniumBase {
         productCard.addToWishlist();
 
         // Navigate to wishlist
-        driver.navigate().to(WISHLIST.url);
+        driver.navigate().to(WISHLIST.getUrl());
 
         // Refresh page for load products
         driver.navigate().refresh();

@@ -29,6 +29,12 @@ public class CheckReviewSendTest extends SeleniumBase {
 
     @AfterMethod
     public void afterMethod() {
+        // Closed second tab
+        driver.close();
+
+        // Switch to first tab
+        switchToTab(0);
+
         driver.close();
     }
 
@@ -64,11 +70,5 @@ public class CheckReviewSendTest extends SeleniumBase {
 
         // Checks actual and expected
         assertEquals(actual, expected);
-
-        // Closed second tab
-        driver.close();
-
-        // Switch to first tab
-        switchToTab(0);
     }
 }

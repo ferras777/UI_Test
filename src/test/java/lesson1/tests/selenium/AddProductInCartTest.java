@@ -29,16 +29,22 @@ public class AddProductInCartTest extends SeleniumBase {
 
     @AfterMethod
     public void afterMethod() {
+        // Closed second tab
+        driver.close();
+
+        // Switch to first tab
+        switchToTab(0);
+
         driver.close();
     }
 
     @Test
     public void addProductInCart() {
         // Navigate aliexpress
-        driver.navigate().to(SITE.url);
+        driver.navigate().to(SITE.getUrl());
 
         // Add text in search box
-        search.fillSearchField("кошельки кожаные");
+        search.fillSearchField("Геометрические Роскошные брендовые кожаные кошельк");
 
         // Click search button
         search.clickSearchButton();
@@ -59,17 +65,13 @@ public class AddProductInCartTest extends SeleniumBase {
         productCard.addToCart();
 
         // Navigate to cart
-        driver.navigate().to(CART.url);
+        driver.navigate().to(CART.getUrl());
 
         // Get actual title of product in cart
         String actualTitle = cart.getProductTitle();
 
         assertEquals(actualTitle, expectedTitle);
 
-        // Closed second tab
-        driver.close();
 
-        // Switch to first tab
-        switchToTab(0);
     }
 }

@@ -41,7 +41,7 @@ public class ProductCard extends SeleniumBase {
     public void closeCookiesBanner() {
         try {
             driver.findElement(By.cssSelector("#cookies-banner__container__close-btn")).click();
-        } catch (TimeoutException | NoSuchElementException e) {
+        } catch (TimeoutException | NoSuchElementException | ElementNotInteractableException e) {
             System.out.println("No cookies banner");
         }
     }

@@ -5,18 +5,18 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 
+import static lesson1.test.enums.Urls.SITE;
+
+
+// TODO: refactor this
 public abstract class SelenideBase {
-    public String SITE_URL = "https://aliexpress.ru/";
 
     @BeforeClass
     public void beforeClass() {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
-        Configuration.baseUrl = SITE_URL;
+        Configuration.baseUrl = SITE.getUrl();
         Configuration.startMaximized = true;
-
-
-//        Configuration.browserCapabilities = new MutableCapabilities(profileForAuthorizationChrome());
     }
 
     public ChromeOptions profileForAuthorizationChrome() {

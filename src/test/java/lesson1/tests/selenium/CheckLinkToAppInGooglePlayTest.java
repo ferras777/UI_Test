@@ -28,7 +28,7 @@ public class CheckLinkToAppInGooglePlayTest extends SeleniumBase {
     public void checkLinkToAppInGooglePlay() {
 
         // Navigate aliexpress
-        driver.navigate().to(SITE.url);
+        driver.navigate().to(SITE.getUrl());
 
         // Click on link app
         mainPage.appStores.click();

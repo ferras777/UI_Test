@@ -9,6 +9,8 @@ import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
 
+
+// TODO: refactor this
 public abstract class SeleniumBase {
     public static WebDriver driver;
     public WebDriverWait wait;

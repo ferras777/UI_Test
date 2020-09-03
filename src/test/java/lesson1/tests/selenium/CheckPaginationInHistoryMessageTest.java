@@ -24,6 +24,12 @@ public class CheckPaginationInHistoryMessageTest extends SeleniumBase {
 
     @AfterMethod
     public void afterMethod() {
+        // Closed second tab
+        driver.close();
+
+        // Switch to first tab
+        switchToTab(0);
+
         driver.close();
     }
 
@@ -57,10 +63,6 @@ public class CheckPaginationInHistoryMessageTest extends SeleniumBase {
         // If it passed, bug fixed.
         assertEquals(actualResult, expectedResult);
 
-        // Closed second tab
-        driver.close();
 
-        // Switch to first tab
-        switchToTab(0);
     }
 }

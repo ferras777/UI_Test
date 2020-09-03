@@ -5,9 +5,13 @@ public enum Urls {
     CART("https://shoppingcart.aliexpress.ru/shopcart/shopcartDetail.htm"),
     WISHLIST("https://my.aliexpress.ru/wishlist/wish_list_product_list.htm");
 
-    public String url;
+    private String url;
 
     Urls(String url) {
         this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
     }
 }

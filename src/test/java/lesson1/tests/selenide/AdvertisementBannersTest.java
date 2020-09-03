@@ -12,6 +12,9 @@ import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.Selenide.open;
 import static org.testng.Assert.assertTrue;
 
+
+// TODO: refactor
+
 public class AdvertisementBannersTest extends SelenideBase {
     MainPage mainPage = new MainPage();
 

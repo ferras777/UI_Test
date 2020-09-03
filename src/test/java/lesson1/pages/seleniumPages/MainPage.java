@@ -7,28 +7,41 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.concurrent.TimeUnit;
 
+
+// TODO: remove sleeps
+
 public class MainPage extends SeleniumBase {
 
     @FindBy(css = ".ng-item.ng-mobile")
     public WebElement appStores;
+
     @FindBy(css = "a.android-link")
     public WebElement googlePlayButton;
+
     @FindBy(css = ".message-icon.i-message-icon")
     public WebElement messageButton;
+
     @FindBy(css = ".aliexpress-icon.i-aliexpress-icon")
     public WebElement profileButton;
+
     @FindBy(css = ".categories-content-title > span:first-child")
     public WebElement categoriesFolder;
+
     @FindBy(css = "#fm-login-id")
     private WebElement loginField;
+
     @FindBy(css = "#fm-login-password")
     private WebElement passwordField;
+
     @FindBy(css = ".android-link")
     private WebElement androidLink;
+
     @FindBy(css = "[data-role=\"item-box\"]:first-child")
     private WebElement firstProduct;
+
     @FindBy(css = ".right-cart-icon")
     private WebElement cartButton;
+
     @FindBy(css = "[href*=\"cellphones-tele\"]")
     private WebElement cellphonesLink;
 
@@ -61,7 +74,9 @@ public class MainPage extends SeleniumBase {
             fillPasswordField(credentials);
             // 6. Click submit button
             driver.findElement(By.cssSelector(".password-login")).click();
-        } catch (NoSuchElementException | ElementNotInteractableException e) {
+
+            Thread.sleep(2000);
+        } catch (NoSuchElementException | ElementNotInteractableException | InterruptedException e) {
             System.out.println("Registration not required");
         }
     }

@@ -10,6 +10,8 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
+// TODO: remove sleeps
+
 public class CategoryItemsRightSizeTest extends SelenideBase {
     MainPage mainPage = new MainPage();
 
@@ -27,9 +29,6 @@ public class CategoryItemsRightSizeTest extends SelenideBase {
     @Test
     public void categoryItemsRightSizeTest() {
         mainPage.closeAdvertisementPopUp();
-
-        // Click in category folder
-        mainPage.clickOnCategoriesFolders();
 
         // Hover all categories, for load items
         for (SelenideElement element : mainPage.getMainMenuElements()) {
