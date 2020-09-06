@@ -9,10 +9,20 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/.allure" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/BrowserMetrics" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/CertificateRevocation" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/Crowd Deny" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/FileTypePolicies" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/PepperFlash" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/Profile 1/IndexedDB" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/Profile 1/Service Worker" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/Profile 1/Site Characteristics Database/lost" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/Profile 1/databases" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/SSLErrorAssistant" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/SafetyTips" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/Subresource Filter" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/ThirdPartyModuleList64" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/Profiles/pnacl" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

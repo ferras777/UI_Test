@@ -2,4 +2,5 @@
 /src/main/resources/Profiles/
 /target/
 /build/
-
+/test.iml
+/.allure/
