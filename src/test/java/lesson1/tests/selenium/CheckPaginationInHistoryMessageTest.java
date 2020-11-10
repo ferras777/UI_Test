@@ -1,16 +1,17 @@
 package lesson1.tests.selenium;
 
-import lesson1.pages.seleniumPages.MainPage;
-import lesson1.pages.seleniumPages.Messages;
-import lesson1.test.SeleniumBase;
-import lesson1.test.enums.Credentials;
+import pages.seleniumPages.MainPage;
+import pages.seleniumPages.Messages;
+import test.SeleniumBase;
+import test.enums.Credentials;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static lesson1.pages.seleniumPages.Utils.switchToTab;
+import static pages.seleniumPages.Utils.switchToTab;
 import static org.testng.Assert.assertEquals;
+import static test.enums.Urls.SITE;
 
 public class CheckPaginationInHistoryMessageTest extends SeleniumBase {
     private MainPage mainPage;
@@ -28,7 +29,7 @@ public class CheckPaginationInHistoryMessageTest extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        switchToTab(0);
+        switchToTab(driver, 0);
 
         driver.close();
     }
@@ -37,7 +38,7 @@ public class CheckPaginationInHistoryMessageTest extends SeleniumBase {
     public void checkPaginationInHistoryMessage() {
 
         // Navigate site
-        driver.navigate().to(SITE_URL);
+        driver.navigate().to(SITE.getUrl());
 
         // Authorization
         mainPage.authorization(Credentials.TEST_ACCOUNT_NEW_USER);
@@ -52,7 +53,7 @@ public class CheckPaginationInHistoryMessageTest extends SeleniumBase {
         messages.messageHistoryButton.click();
 
         // Switch to second tab
-        switchToTab(1);
+        switchToTab(driver, 1);
 
         // Go to page number 9999.
         messages.goToPage(9999);
@@ -62,7 +63,5 @@ public class CheckPaginationInHistoryMessageTest extends SeleniumBase {
 
         // If it passed, bug fixed.
         assertEquals(actualResult, expectedResult);
-
-
     }
 }

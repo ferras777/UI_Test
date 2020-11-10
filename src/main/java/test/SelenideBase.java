@@ -1,14 +1,12 @@
-package lesson1.test;
+package test;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 
-import static lesson1.test.enums.Urls.SITE;
+import static test.enums.Urls.SITE;
 
-
-// TODO: refactor this
 public abstract class SelenideBase {
 
     @BeforeClass

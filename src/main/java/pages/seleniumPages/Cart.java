@@ -1,10 +1,9 @@
-package lesson1.pages.seleniumPages;
+package pages.seleniumPages;
 
-import lesson1.test.SeleniumBase;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import test.SeleniumBase;
 
 public class Cart extends SeleniumBase {
 
@@ -22,10 +21,6 @@ public class Cart extends SeleniumBase {
 
     @FindBy(css = "[ae_button_type=\"login\"]")
     private WebElement authenticationLink;
-
-    public Cart(WebDriver driver) {
-        SeleniumBase.driver = driver;
-    }
 
     public void deleteAllItemsInCart() {
         try {

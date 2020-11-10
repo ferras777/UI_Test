@@ -1,14 +1,14 @@
 package lesson1.tests.selenium;
 
-import lesson1.pages.seleniumPages.MainPage;
-import lesson1.test.SeleniumBase;
+import pages.seleniumPages.MainPage;
+import test.SeleniumBase;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static lesson1.pages.seleniumPages.Utils.switchToTab;
-import static lesson1.test.enums.Urls.SITE;
+import static pages.seleniumPages.Utils.switchToTab;
+import static test.enums.Urls.SITE;
 import static org.testng.Assert.assertEquals;
 
 public class CheckLinkToAppInGooglePlayTest extends SeleniumBase {
@@ -37,7 +37,7 @@ public class CheckLinkToAppInGooglePlayTest extends SeleniumBase {
         mainPage.googlePlayButton.click();
 
         // Switch to new tab
-        switchToTab(1);
+        switchToTab(driver, 1);
 
         String expectedTitle = "Приложения в Google Play – AliExpress онлайн магазин. Покупай со скидками!";
         String actualTitle = driver.getTitle();
@@ -49,6 +49,6 @@ public class CheckLinkToAppInGooglePlayTest extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        switchToTab(0);
+        switchToTab(driver, 0);
     }
 }

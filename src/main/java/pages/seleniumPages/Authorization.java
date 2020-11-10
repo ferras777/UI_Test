@@ -1,9 +1,12 @@
-package lesson1.pages.seleniumPages;
+package pages.seleniumPages;
 
-import lesson1.test.SeleniumBase;
-import lesson1.test.enums.Credentials;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import test.SeleniumBase;
+import test.enums.Credentials;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,10 +20,6 @@ public class Authorization extends SeleniumBase {
 
     @FindBy(css = ".fm-button")
     private WebElement enterButton;
-
-    public Authorization(WebDriver driver) {
-        SeleniumBase.driver = driver;
-    }
 
     public void fillLoginField(Credentials credentials) {
         loginField.clear();

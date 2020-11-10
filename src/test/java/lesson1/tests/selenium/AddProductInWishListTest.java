@@ -1,17 +1,17 @@
 package lesson1.tests.selenium;
 
-import lesson1.pages.seleniumPages.MainPage;
-import lesson1.pages.seleniumPages.ProductCard;
-import lesson1.pages.seleniumPages.Wishlist;
-import lesson1.test.SeleniumBase;
-import lesson1.test.enums.Credentials;
+import pages.seleniumPages.MainPage;
+import pages.seleniumPages.ProductCard;
+import pages.seleniumPages.Wishlist;
+import test.SeleniumBase;
+import test.enums.Credentials;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static lesson1.test.enums.Urls.SITE;
-import static lesson1.test.enums.Urls.WISHLIST;
+import static test.enums.Urls.SITE;
+import static test.enums.Urls.WISHLIST;
 import static org.testng.Assert.assertEquals;
 
 public class AddProductInWishListTest extends SeleniumBase {

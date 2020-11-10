@@ -1,6 +1,6 @@
-package lesson1.pages.seleniumPages;
+package pages.seleniumPages;
 
-import lesson1.test.SeleniumBase;
+import test.SeleniumBase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
@@ -17,10 +17,6 @@ public class ProductCard extends SeleniumBase {
 
     @FindBy(css = ".add-wishlist")
     private WebElement addToWishlistButton;
-
-    public ProductCard(WebDriver driver) {
-        SeleniumBase.driver = driver;
-    }
 
     public String getProductTitle() {
         return productTitle.getText();

@@ -1,4 +1,4 @@
-package lesson1.test;
+package test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -9,28 +9,20 @@ import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
 
-
-// TODO: refactor this
 public abstract class SeleniumBase {
-    public static WebDriver driver;
-    public WebDriverWait wait;
 
-    public String SITE_URL = "https://aliexpress.ru/";
+    public WebDriver driver;
+    public WebDriverWait wait;
 
     @BeforeClass
     public void BeforeClass() {
         WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--user-data-dir=src\\main\\resources\\Profiles");
         options.addArguments("--profile-directory=Profile 1");
-
         driver = new ChromeDriver(options);
-
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
     }
-
-
 }

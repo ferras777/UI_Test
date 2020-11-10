@@ -1,14 +1,11 @@
-package lesson1.pages.seleniumPages;
+package pages.seleniumPages;
 
-import lesson1.test.SeleniumBase;
-import lesson1.test.enums.Credentials;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import test.SeleniumBase;
+import test.enums.Credentials;
 
 import java.util.concurrent.TimeUnit;
-
-
-// TODO: remove sleeps
 
 public class MainPage extends SeleniumBase {
 
@@ -44,11 +41,6 @@ public class MainPage extends SeleniumBase {
 
     @FindBy(css = "[href*=\"cellphones-tele\"]")
     private WebElement cellphonesLink;
-
-
-    public MainPage(WebDriver driver) {
-        SeleniumBase.driver = driver;
-    }
 
     public void fillLoginField(Credentials credentials) {
         loginField.clear();

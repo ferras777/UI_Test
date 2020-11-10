@@ -1,16 +1,18 @@
 package lesson1.tests.selenium;
 
-import lesson1.pages.seleniumPages.Advertisement;
-import lesson1.pages.seleniumPages.Authorization;
-import lesson1.pages.seleniumPages.Cart;
-import lesson1.pages.seleniumPages.MainPage;
-import lesson1.test.SeleniumBase;
-import lesson1.test.enums.Credentials;
+import pages.seleniumPages.Advertisement;
+import pages.seleniumPages.Authorization;
+import pages.seleniumPages.Cart;
+import pages.seleniumPages.MainPage;
+import test.SeleniumBase;
+import test.enums.Credentials;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static test.enums.Urls.SITE;
 
 public class AuthorizationInEmptyCartTest extends SeleniumBase {
 
@@ -35,7 +37,7 @@ public class AuthorizationInEmptyCartTest extends SeleniumBase {
     @Test
     public void authorizationInEmptyCart() {
         // Navigate site
-        driver.navigate().to(SITE_URL);
+        driver.navigate().to(SITE.getUrl());
 
         // Close advertisement
         advertisement.closeAdvertisementLayer();

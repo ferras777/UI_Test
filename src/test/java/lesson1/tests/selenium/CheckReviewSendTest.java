@@ -1,10 +1,10 @@
 package lesson1.tests.selenium;
 
-import lesson1.pages.seleniumPages.Advertisement;
-import lesson1.pages.seleniumPages.MainPage;
-import lesson1.pages.seleniumPages.Profile;
-import lesson1.test.SeleniumBase;
-import lesson1.test.enums.Credentials;
+import pages.seleniumPages.Advertisement;
+import pages.seleniumPages.MainPage;
+import pages.seleniumPages.Profile;
+import test.SeleniumBase;
+import test.enums.Credentials;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
@@ -12,8 +12,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static java.lang.Thread.sleep;
-import static lesson1.pages.seleniumPages.Utils.switchToTab;
+import static pages.seleniumPages.Utils.switchToTab;
 import static org.testng.Assert.assertEquals;
+import static test.enums.Urls.SITE;
 
 public class CheckReviewSendTest extends SeleniumBase {
     private Advertisement advertisement;
@@ -33,7 +34,7 @@ public class CheckReviewSendTest extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        switchToTab(0);
+        switchToTab(driver, 0);
 
         driver.close();
     }
@@ -41,7 +42,7 @@ public class CheckReviewSendTest extends SeleniumBase {
     @Test
     public void checkReviewSend() throws InterruptedException {
         // Navigate site
-        driver.navigate().to(SITE_URL);
+        driver.navigate().to(SITE.getUrl());
 
         // Close advertisement
         advertisement.closeAdvertisementLayer();
@@ -60,7 +61,7 @@ public class CheckReviewSendTest extends SeleniumBase {
         profile.surveyButton.click();
 
         // Switch to second tab
-        switchToTab(1);
+        switchToTab(driver, 1);
 
         // Click button send
         profile.surveySubmitButton.click();

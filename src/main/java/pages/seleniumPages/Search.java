@@ -1,9 +1,8 @@
-package lesson1.pages.seleniumPages;
+package pages.seleniumPages;
 
-import lesson1.test.SeleniumBase;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import test.SeleniumBase;
 
 public class Search extends SeleniumBase {
 
@@ -15,10 +14,6 @@ public class Search extends SeleniumBase {
 
     @FindBy(css = "[product-index=\"0\"]")
     private WebElement product;
-
-    public Search(WebDriver driver) {
-        SeleniumBase.driver = driver;
-    }
 
     public void fillSearchField(String value) {
         searchField.sendKeys(value);

@@ -1,9 +1,9 @@
 package lesson1.tests.selenide;
 
-import lesson1.pages.selenidePages.MainPage;
-import lesson1.pages.selenidePages.ProductPage;
-import lesson1.pages.selenidePages.SearchPage;
-import lesson1.test.SelenideBase;
+import pages.selenidePages.MainPage;
+import pages.selenidePages.ProductPage;
+import pages.selenidePages.SearchPage;
+import test.SelenideBase;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

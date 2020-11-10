@@ -1,4 +1,4 @@
-package lesson1.test.enums;
+package test.enums;
 
 public enum Credentials {
     TEST_ACCOUNT_NEW_USER("jasex11393@in4mail.net", "qaz123"),

@@ -1,4 +1,4 @@
-package lesson1.test.enums;
+package test.enums;
 
 public enum Urls {
     SITE("https://aliexpress.ru/"),

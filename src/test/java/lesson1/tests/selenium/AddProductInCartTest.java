@@ -1,17 +1,17 @@
 package lesson1.tests.selenium;
 
-import lesson1.pages.seleniumPages.Cart;
-import lesson1.pages.seleniumPages.ProductCard;
-import lesson1.pages.seleniumPages.Search;
-import lesson1.test.SeleniumBase;
+import pages.seleniumPages.Cart;
+import pages.seleniumPages.ProductCard;
+import pages.seleniumPages.Search;
+import test.SeleniumBase;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static lesson1.pages.seleniumPages.Utils.switchToTab;
-import static lesson1.test.enums.Urls.CART;
-import static lesson1.test.enums.Urls.SITE;
+import static pages.seleniumPages.Utils.switchToTab;
+import static test.enums.Urls.CART;
+import static test.enums.Urls.SITE;
 import static org.testng.Assert.assertEquals;
 
 public class AddProductInCartTest extends SeleniumBase {
@@ -33,7 +33,7 @@ public class AddProductInCartTest extends SeleniumBase {
         driver.close();
 
         // Switch to first tab
-        switchToTab(0);
+        switchToTab(driver, 0);
 
         driver.close();
     }
@@ -53,7 +53,7 @@ public class AddProductInCartTest extends SeleniumBase {
         search.clickOnProduct();
 
         // Switch to second tab
-        switchToTab(1);
+        switchToTab(driver, 1);
 
         // Get expected title of product
         String expectedTitle = productCard.getProductTitle();

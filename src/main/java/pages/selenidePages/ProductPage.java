@@ -1,4 +1,4 @@
-package lesson1.pages.selenidePages;
+package pages.selenidePages;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
