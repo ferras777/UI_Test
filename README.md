@@ -1,1 +1,1 @@
-# UI_selenium_test
+# UI Selenium and Selenide test study
